@@ -82,7 +82,22 @@
 }
 
         .poster-card:hover img { opacity: 0.8; transform: scale(1.05); }
-        .poster-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%); }
+        .poster-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 30; /* 🔥 title always on top */
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0.4) 60%,
+    transparent 100%
+  );
+}
+
 
         /* List Styling */
         .work-item { border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.4s ease; cursor: pointer; }
@@ -361,6 +376,84 @@ body.pen-active #mobile-menu .nav-link {
 
 body.pen-active #mobile-menu .nav-link::after {
   background: #1a1a1a;
+}
+/* Desktop hover */
+@media (min-width: 769px) {
+  .view-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .poster-card:hover .view-overlay {
+    opacity: 1;
+  }
+}
+
+/* Mobile: always visible */
+@media (max-width: 768px) {
+  .view-overlay {
+    opacity: 1 !important;
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    /* 🔥 SPACE FOR TITLE + TAG */
+    padding-bottom: 120px;
+
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.85),
+      rgba(0,0,0,0.4),
+      transparent
+    );
+
+    z-index: 20; /* between image & title */
+  }
+
+  .view-btn {
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+  }
+}
+
+
+/* ============================= */
+/* VIEW DETAILS — MOBILE FIX */
+/* ============================= */
+
+/* Desktop: hover only */
+@media (min-width: 769px) {
+  .view-overlay {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    background: rgba(0,0,0,0.6);
+  }
+
+  .poster-card:hover .view-overlay {
+    opacity: 1;
+  }
+}
+
+/* Mobile: always visible */
+@media (max-width: 768px) {
+  .view-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.85),
+      rgba(0,0,0,0.4),
+      transparent
+    );
+    align-items: flex-end;
+    padding-bottom: 20px;
+  }
+
+  .view-btn {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+  }
 }
 
 
@@ -934,19 +1027,24 @@ body.pen-active #mobile-menu .nav-link::after {
                 <!-- FILM CARD -->
                 <div class="poster-card relative group" onclick="openProject('echo')">
 
-                    <img 
-    src="shuruwat.jpeg" 
-    alt="The Echo Project Poster"
-    class="w-full h-full object-cover"
+  <img 
+  src="shuruwat.jpeg"
+  loading="lazy"
+  decoding="async"
+  alt="The Echo Project Poster"
+  class="w-full h-full object-cover"
 />
 
 
+
                     <!-- VIEW DETAILS OVERLAY -->
-                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center ">
-                        <span class="border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
-                            View Details
-                        </span>
-                    </div>
+                   <!-- VIEW DETAILS OVERLAY -->
+<div class="view-overlay absolute inset-0 flex items-center justify-center">
+  <span class="view-btn border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
+    View Details
+  </span>
+</div>
+
 
                     <div class="poster-info">
                         <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
@@ -969,11 +1067,12 @@ body.pen-active #mobile-menu .nav-link::after {
                         Film Poster Placeholder
                     </div>
 
-                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <span class="border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
-                            View Details
-                        </span>
-                    </div>
+                    <div class="view-overlay absolute inset-0 flex items-center justify-center">
+  <span class="view-btn border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
+    View Details
+  </span>
+</div>
+
 
                     <div class="poster-info">
                         <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
@@ -989,29 +1088,10 @@ body.pen-active #mobile-menu .nav-link::after {
                 </div>
 
                 <!-- FILM CARD -->
-                <div class="poster-card relative group" onclick="openProject('numb')">
+               
 
-                    <div class="w-full h-full bg-neutral-900 flex items-center justify-center font-title text-white/10 text-[10px] text-center p-4">
-                        Film Poster Placeholder
-                    </div>
 
-                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <span class="border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
-                            View Details
-                        </span>
-                    </div>
-
-                    <div class="poster-info">
-                        <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
-                            Short Film
-                        </span>
-                        <h3 class="text-xl md:text-2xl font-title mb-1">
-                            NUMB
-                        </h3>
-                        <p class="text-[9px] font-serif italic opacity-60">
-                            When emotions fade, survival becomes mechanical.
-                        </p>
-                    </div>
+                    
                 </div>
 
             </div>
@@ -1136,30 +1216,66 @@ body.pen-active #mobile-menu .nav-link::after {
           <!-- BIG -->
           <div class="flex flex-col opacity-100">
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-left-01.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-left-02.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
           </div>
 
           <!-- MEDIUM -->
           <div class="flex flex-col opacity-70">
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-left-03.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-left-04.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
           </div>
 
           <!-- SMALL -->
           <div class="flex flex-col opacity-35">
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-left-05.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-left-06.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
           </div>
         </div>
@@ -1200,30 +1316,66 @@ body.pen-active #mobile-menu .nav-link::after {
           <!-- BIG -->
           <div class="flex flex-col opacity-100">
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-right-01.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-right-02.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
           </div>
 
           <!-- MEDIUM -->
           <div class="flex flex-col opacity-70">
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-right-03.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-right-04.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
           </div>
 
           <!-- SMALL -->
           <div class="flex flex-col opacity-35">
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-right-05.jpg" class="w-full h-full object-cover" />
+              <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
-              <img src="images/mic-right-06.jpg" class="w-full h-full object-cover" />
+             <img 
+  src="images/mic-left-01.jpg"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover"
+/>
+
             </div>
           </div>
         </div>
@@ -1687,8 +1839,16 @@ function resetOverlayState() {
 
 
        function openProject(id) {
+  // 🔥 Instant tap feedback (mobile speed fix)
+  if (event && event.currentTarget) {
+    const card = event.currentTarget;
+    card.style.transform = 'scale(0.97)';
+    setTimeout(() => card.style.transform = '', 120);
+  }
+
   const data = projectData[id];
   if (!data) return;
+
 
   resetOverlayState(); // 🔥 KEY FIX
 
