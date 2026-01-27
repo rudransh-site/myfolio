@@ -213,8 +213,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
 }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
@@ -389,36 +389,6 @@ body.pen-active #mobile-menu .nav-link::after {
 }
 
 /* Mobile: always visible */
-@media (max-width: 768px) {
-  .view-overlay {
-    opacity: 1 !important;
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    /* 🔥 SPACE FOR TITLE + TAG */
-    padding-bottom: 120px;
-
-    background: linear-gradient(
-      to top,
-      rgba(0,0,0,0.85),
-      rgba(0,0,0,0.4),
-      transparent
-    );
-
-    z-index: 20; /* between image & title */
-  }
-
-  .view-btn {
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(6px);
-  }
-}
-
-
 /* ============================= */
 /* VIEW DETAILS — MOBILE FIX */
 /* ============================= */
@@ -477,7 +447,7 @@ body.pen-active #mobile-menu .nav-link::after {
             <button class="nav-link" onclick="showPage('Stage')">Stage</button>
             <button class="nav-link" onclick="showPage('mic')">On Mic</button>
             <button class="nav-link" onclick="showPage('writer')">The Pen</button>
-            <button class="nav-link" onclick="showPage('social')">Socials</button>
+            <button class="nav-link" onclick="showPage('social')">Connect</button>
         </div>
 
         <!-- Mobile Burger -->
@@ -497,7 +467,7 @@ body.pen-active #mobile-menu .nav-link::after {
             <button class="nav-link" onclick="showPage('Stage'); toggleMobileMenu()">Stage</button>
             <button class="nav-link" onclick="showPage('mic'); toggleMobileMenu()">On Mic</button>
             <button class="nav-link" onclick="showPage('writer'); toggleMobileMenu()">The Pen</button>
-            <button class="nav-link" onclick="showPage('social'); toggleMobileMenu()">Socials</button>
+            <button class="nav-link" onclick="showPage('social'); toggleMobileMenu()">Connect</button>
         </div>
     </div>
 
@@ -587,22 +557,28 @@ body.pen-active #mobile-menu .nav-link::after {
         <div class="max-w-[1400px] mx-auto w-full relative">
             <div class="absolute -top-32 -right-20 font-title text-[15vw] outline-text select-none whitespace-nowrap pointer-events-none z-0 hidden lg:block">ARTIST</div>
             <h1 class="text-5xl sm:text-7xl md:text-[120px] font-title leading-[0.9] mb-4 tracking-tighter relative z-10">
-    PERFORM<br><span class="text-pink-600">LOUD.</span>
+    PERFORM<br><span class="text-pink-600">LOUD</span>
 </h1>
 
 <p class="text-[10px] md:text-xs font-title tracking-[0.35em] uppercase text-white/60 mb-8 relative z-10">
-    Writer • Actor • Performer
+    Writer • Creator  • Performer
 </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 relative z-10">
-    <button onclick="showPage('actor')" class="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-title text-[10px] tracking-widest hover:backgroundColor hover:text-pink-600 transition-all">
+           <div class="flex flex-col sm:flex-row gap-4 relative z-10">
+    <button onclick="showPage('actor')" class="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-title text-[10px] tracking-widest hover:text-pink-600 transition-all">
         Explore Work
     </button>
 
     <button onclick="showPage('profile')" class="px-8 py-3 md:px-10 md:py-4 border border-white text-white font-title text-[10px] tracking-widest hover:bg-white hover:text-black transition-all">
         View Profile
     </button>
+
+    <!-- ✅ NEW WRITING BUTTON -->
+    <button onclick="showPage('writer')" class="px-8 py-3 md:px-10 md:py-4 border border-white text-white font-title text-[10px] tracking-widest hover:bg-white hover:text-black transition-all">
+        Script & Verse
+    </button>
 </div>
+
 
 </div>
 </section>
@@ -624,7 +600,7 @@ body.pen-active #mobile-menu .nav-link::after {
                     </span>
                     <h1 class="text-6xl md:text-8xl font-serif font-light leading-[1.05] text-[#f5f2b8]"> <!-- changed color to light yellow -->
                         Rudransh <br>
-                        <span class="italic pl-12 md:pl-24">Sharma</span>
+                        <span class="italic pl-12 md:pl-24 text-white/40">Sharma</span>
                     </h1>
                 </div>
                 <div class="text-right">
@@ -642,14 +618,24 @@ body.pen-active #mobile-menu .nav-link::after {
         <!-- Intro -->
         <div class="grid lg:grid-cols-12 gap-6 mb-16"> <!-- reduced gap and mb -->
 
-            <!-- Circular Photo -->
-            <div class="lg:col-span-5 flex justify-center lg:justify-start">
-                <div class="w-64 h-64 md:w-72 md:h-72 rounded-full bg-neutral-900 border border-white/10 relative overflow-hidden scale-105 transition-transform duration-500 hover:scale-110"> <!-- increased size slightly + hover effect -->
-                    <div class="absolute inset-0 flex items-center justify-center text-[10px] tracking-[1em] text-white/10 uppercase">
-                        Portrait
-                    </div>
-                </div>
-            </div>
+          <!-- Circular Photo -->
+<!-- Circular Photo -->
+<div class="lg:col-span-5 flex justify-center lg:justify-start">
+  <div class="w-64 h-64 md:w-72 md:h-72 rounded-full
+              bg-neutral-900 border border-white/10
+              relative overflow-hidden scale-105
+              transition-transform duration-500 hover:scale-110
+              md:translate-x-6 md:translate-y-8">
+
+    <img
+      src="DCMI/profile.jpg"
+      alt="Rudransh Sharma Portrait"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+
+  </div>
+</div>
+
 
             <!-- Intro Text -->
             <div class="lg:col-span-7 flex flex-col justify-center lg:pl-10"> <!-- reduced pl -->
@@ -657,8 +643,10 @@ body.pen-active #mobile-menu .nav-link::after {
                     Sunrise bound developer, Sunset seeking writer!!
                 </h2>
                 <p class="text-lg font-serif italic text-white/60 leading-relaxed max-w-2xl mb-6">
-                    Experience in theatre, street plays, short films, and live performance.
-                    My practice is built on meaningful storytelling and active audience connection.
+                    As an engineering student, I'm doing everything execpt doing engineering.
+                    <br>Poetry is where I begin, scripts and performance follow naturally.
+                    I work across theatre, film, and live performance, often performing my own writing, because I trust the body to complete what language starts.
+                    I’m still learning how to stay honest on the page and present on stage. 
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-6 border-t border-white/10 pt-6"> <!-- reduced pt -->
@@ -666,24 +654,24 @@ body.pen-active #mobile-menu .nav-link::after {
                         <h4 class="text-xs font-bold tracking-widest text-accent/80 uppercase mb-2">Writing</h4>
                         <ul class="text-[11px] text-white/40 space-y-1 uppercase tracking-tight">
                             <li>• Stage play writing</li>
-                            <li>• Street play writing</li>
                             <li>• Short film scripts</li>
-                            <li>• Social themes</li>
+                            <li>• Reels & social media </li>
+                            <li>• Website content<li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-xs font-bold tracking-widest text-accent/80 uppercase mb-2">Acting</h4>
                         <ul class="text-[11px] text-white/40 space-y-1 uppercase tracking-tight">
-                            <li>• Theatre</li>
+                            <li>• Plays & Skits</li>
                             <li>• Short films</li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-xs font-bold tracking-widest text-accent/80 uppercase mb-2">Performance</h4>
                         <ul class="text-[11px] text-white/40 space-y-1 uppercase tracking-tight">
-                            <li>• Street theatre</li>
-                            <li>• Spoken word</li>
                             <li>• Stand-up</li>
+                            <li>• Poetry mics</li>
+                            <li>• street play</li>
                         </ul>
                     </div>
                 </div>
@@ -705,54 +693,74 @@ body.pen-active #mobile-menu .nav-link::after {
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-x-24 gap-y-20">
 
         <!-- 01  -->
-        <div class="relative pl-10">
-        <span class="absolute left-0 top-0 text-sm text-accent/80 font-medium">
-        01
+       <!-- 01 -->
+<div class="relative pl-10">
+  <span class="absolute left-0 top-0 text-sm text-accent/80 font-medium">
+    01
+  </span>
+
+  <div class="absolute left-3 top-0 h-full w-px bg-white/10"></div>
+
+  <h4 class="text-3xl mb-6 text-[#f5f2b8]">
+    Creative Leadership
+  </h4>
+
+  <ul class="space-y-6 list-disc list-outside ml-6">
+
+
+    <!-- OUTER BULLET 1 -->
+    <li class="text-white">
+
+      <div class="flex items-baseline justify-between gap-6">
+        <span>Head of Writing & Acting Media Club</span>
+        <span class="text-[10px] tracking-widest uppercase text-white/40">
+          2025–present
         </span>
+      </div>
 
-        <div class="absolute left-3 top-0 h-full w-px bg-white/10"></div>
+      <span class="block text-xs text-white/40 mt-1">
+        @sandarshmediaclub • SVVV
+      </span>
 
-        <h4 class="text-3xl font-serif mb-6 text-[#f5f2b8]">
-        Creative Leadership
-        </h4>
-
-        <ul class="space-y-6 list-disc list-inside">
-
-        <!-- OUTER BULLET : NOW NORMAL (was italic/heading before) -->
-        <li class="text-white">
-            Head of Writing & Acting Media Club
+      <ul class="inner-points mt-4 space-y-4">
+        <li class="font-serif italic text-white/80">
+          Leading writing and performance-driven projects, guiding teams through script development and execution.
         </li>
-
-        <!-- INNER BULLETS : NOW HEADING STYLE (swapped) -->
-        <ul class="inner-points mt-2 space-y-4">
-
-            <li class="font-serif italic text-white/80">
-                Leading writing and performance-driven projects, guiding teams through script development and execution.
-            </li>
-            <li class="font-serif italic text-white/80">
-                Ensuring narrative clarity and creative alignment across productions.
-            </li>
-        </ul>
-
-        <!-- OUTER BULLET -->
-        <li class="text-white mt-4">
-            Social Media Head — Literary Club (1 Year)
+        <li class="font-serif italic text-white/80">
+          Ensuring narrative clarity and creative alignment across productions.
         </li>
+      </ul>
 
-        <!-- INNER BULLETS -->
-        <ul class="inner-points mt-2 space-y-4">
+    </li>
 
-            
-            <li class="font-serif italic text-white/80">
-                Conceptualised and produced promotional reels to increase reach and visibility.
-            </li>
-            <li class="font-serif italic text-white/80">
-                Performed basic video editing for promotional and creative content.
-            </li>
-        </ul>
+    <!-- OUTER BULLET 2 -->
+    <li class="text-white">
 
+      <div class="flex items-baseline justify-between gap-6">
+        <span>Social Media Head — Literary Club</span>
+        <span class="text-[10px] tracking-widest uppercase text-white/40">
+          2024–25
+        </span>
+      </div>
 
-    </div>
+      <span class="block text-xs text-white/40 mt-1">
+        @manasclubsvvv
+      </span>
+
+      <ul class="inner-points mt-4 space-y-4">
+        <li class="font-serif italic text-white/80">
+          Conceptualised and produced promotional reels to increase reach and visibility.
+        </li>
+        <li class="font-serif italic text-white/80">
+          Performed basic video editing for promotional and creative content.
+        </li>
+      </ul>
+
+    </li>
+
+  </ul>
+</div>
+
 
         <!-- 02  -->
     <div class="relative pl-10">
@@ -762,7 +770,7 @@ body.pen-active #mobile-menu .nav-link::after {
 
     <div class="absolute left-3 top-0 h-full w-px bg-white/10"></div>
 
-    <h4 class="text-3xl font-serif mb-6 text-[#f5f2b8]">
+    <h4 class="text-3xl mb-6 text-[#f5f2b8]">
         Film & Digital
     </h4>
 
@@ -780,7 +788,7 @@ body.pen-active #mobile-menu .nav-link::after {
                 Co-writer contributing to narrative development under a strict 48-hour timeline.
             </li>
             <li class="font-serif italic text-white/80">
-                Also acted in the film.
+                Contributed as an actor wth my screen presence.
             </li>
         </ul>
 
@@ -793,7 +801,7 @@ body.pen-active #mobile-menu .nav-link::after {
         <ul class="inner-points mt-2 space-y-4">
 
             <li class="font-serif italic text-white/80">
-                Written and Acted in it.
+                Written and brought to the screen through performance.
             </li>
            
             <li class="font-serif italic text-white/80">
@@ -803,7 +811,7 @@ body.pen-active #mobile-menu .nav-link::after {
 
         <!-- OUTER BULLET -->
         <li class="text-white mt-3">
-            IMC Documentary
+            Indore Municipal Corporation Documentary(IMC)
         </li>
 
         <!-- INNER BULLETS -->
@@ -813,7 +821,7 @@ body.pen-active #mobile-menu .nav-link::after {
                 Scriptwriter for interview segments.
             </li>
             <li class="font-serif italic text-white/80">
-                Wrote interview scripts for two participants, shaping their responses into a coherent narrative.
+                Wrote interview scripts for chancellor, shaping their responses into a coherent narrative.
             </li>
         </ul>
 
@@ -829,7 +837,7 @@ body.pen-active #mobile-menu .nav-link::after {
 
     <div class="absolute left-3 top-0 h-full w-px bg-white/10"></div>
 
-    <h4 class="text-3xl font-serif mb-6 text-[#f5f2b8]">
+    <h4 class="text-3xl  mb-6 text-[#f5f2b8]">
         Street Plays
     </h4>
 
@@ -855,7 +863,7 @@ body.pen-active #mobile-menu .nav-link::after {
         <ul class="inner-points mt-2 space-y-4">
 
             <li class="font-serif italic text-white/80">
-                Written by me, addressing substance abuse and its social consequences.
+                Done scripting of play, addressing substance abuse and its social consequences.
             </li>
         </ul>
 
@@ -867,7 +875,7 @@ body.pen-active #mobile-menu .nav-link::after {
         <ul class="inner-points mt-2 space-y-4">
 
             <li class="font-serif italic text-white/80">
-                Written and Acted also, highlighting issues of women’s safety in public spaces.
+               Conceptualised, written, and acted, centring issues of women’s safety in public spaces.
             </li>
            
         </ul>
@@ -883,7 +891,7 @@ body.pen-active #mobile-menu .nav-link::after {
 
     <div class="absolute left-3 top-0 h-full w-px bg-white/10"></div>
 
-    <h4 class="text-3xl font-serif mb-6 text-[#f5f2b8]">
+    <h4 class="text-3xl mb-6 text-[#f5f2b8]">
         On Stage
     </h4>
 
@@ -897,7 +905,7 @@ body.pen-active #mobile-menu .nav-link::after {
         <ul class="inner-points mt-2 space-y-4">
 
             <li class="font-serif italic text-white/80">
-                Written and performed by me; secured Runner-Up position at the Annual Fest.
+                Co-written and performed lead character; secured Runner-Up position at the Annual Fest.
             </li>
         </ul>
 
@@ -941,6 +949,80 @@ body.pen-active #mobile-menu .nav-link::after {
     </div>
     </div>
 
+<!-- CERTIFICATIONS (IMAGE-FOCUSED) -->
+<section class="mb-32">
+
+  <!-- Heading -->
+  <div class="text-center mb-16 flex flex-col items-center">
+    <h3 class="text-base tracking-[1em] uppercase text-accent/80 font-medium mb-4">
+      Certifications
+    </h3>
+    <div class="h-[1px] w-40 bg-[#f5f2b8]/30"></div>
+    <p class="mt-6 text-sm font-serif italic text-white/50 max-w-xl">
+      Selected recognitions that quietly support the work.
+    </p>
+  </div>
+
+  <!-- Certificates Grid -->
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+
+    <!-- CERTIFICATE 01 -->
+    <div class="flex flex-col items-center text-center group">
+
+      <div class="border border-white/10 rounded-xl overflow-hidden
+                  transition-all group-hover:border-accent/50">
+        <img
+          src="DCMI/FRC.jpeg"
+          alt="48 Hour Short Film Certificate"
+          class="w-full h-auto object-contain bg-black/40"
+        >
+      </div>
+
+      <p class="mt-4 text-sm font-serif italic text-white/60 max-w-xs">
+       Storytelling course by Zakir Khan 
+      </p>
+
+    </div>
+
+    <!-- CERTIFICATE 02 -->
+    <div class="flex flex-col items-center text-center group">
+
+      <div class="border border-white/10 rounded-xl overflow-hidden
+                  transition-all group-hover:border-accent/50">
+        <img
+          src="DCMI/film_certificate.jpeg"
+          alt="Theatre Performance Certificate"
+          class="w-full h-auto object-contain bg-black/40"
+        >
+      </div>
+
+      <p class="mt-4 text-sm font-serif italic text-white/60 max-w-xs">
+         48-hour short film — scripting & performance.
+      </p>
+
+    </div>
+
+    <!-- CERTIFICATE 03 -->
+    <!--div class="flex flex-col items-center text-center group">
+
+      <div class="border border-white/10 rounded-xl overflow-hidden
+                  transition-all group-hover:border-accent/50">
+        <img
+          src="certificates/streetplay.jpg"
+          alt="Street Play Certificate"
+          class="w-full h-auto object-contain bg-black/40"
+        >
+      </div>
+
+      <p class="mt-4 text-sm font-serif italic text-white/60 max-w-xs">
+        Writing and performing street plays for social awareness.
+      </p>
+
+    </div>-->
+
+  </div>
+</section>
+
 
 
 <!-- Expertise Spectrum - UPDATED LAYOUT -->
@@ -967,13 +1049,10 @@ body.pen-active #mobile-menu .nav-link::after {
 
                         <div class="border-l-2 border-accent/30 pl-8 group">
                             <span class="text-accent text-xs tracking-[0.3em] uppercase block mb-4 font-bold group-hover:translate-x-2 transition-transform">Writing</span>
-                            <p class="text-xl md:text-2xl font-serif italic text-white/90">Script</p>
+                            <p class="text-xl md:text-2xl font-serif italic text-white/90">Script </p>
 
                         </div>
-                        <div class="border-l-2 border-accent/30 pl-8 group">
-                            <span class="text-accent text-xs tracking-[0.3em] uppercase block mb-4 font-bold group-hover:translate-x-2 transition-transform">Acting</span>
-                             <p class="text-xl md:text-2xl font-serif italic text-white/90">Theatre, Camera</p>
-                        </div>
+                        
                         <div class="border-l-2 border-accent/30 pl-8 group">
                             <span class="text-accent text-xs tracking-[0.3em] uppercase block mb-4 font-bold group-hover:translate-x-2 transition-transform">Performance</span>
                             <p class="text-xl md:text-2xl font-serif italic text-white/90">Poetry, Stand-up</p>
@@ -994,10 +1073,10 @@ body.pen-active #mobile-menu .nav-link::after {
                     Current Focus
                 </h5>
                 <p class="text-2xl md:text-4xl font-serif italic text-white/80 leading-relaxed px-4">
-                    "Expanding writing and acting work for film while continuing theatre and live performance."
+                    "Exploring how AI can support the writing process helping me produce more while staying rooted in my own creative and emotional approach."
                 </p>
                 <div class="mt-24 text-[10px] tracking-[0.3em] text-white/20 uppercase font-sans">
-                    © 2024 Rudransh Sharma • Crafted for the Stage & Screen
+                    © 2026 Rudransh Sharma • Crafted for the Stage & Screen
                 </div>
             </div>
         </footer>
@@ -1082,7 +1161,7 @@ body.pen-active #mobile-menu .nav-link::after {
                             The Witness
                         </h3>
                         <p class="text-[9px] font-serif italic opacity-60">
-                            A quiet rebellion against disappearance.
+                            Short film for UGC on Ragging consequenses  
                         </p>
                     </div>
                 </div>
@@ -1565,7 +1644,7 @@ body.pen-active #mobile-menu .nav-link::after {
 
 
             <!-- Instagram -->
-            <a href="https://instagram.com/yourusername"
+            <a href="https://instagram.com/rudransh_arma_"
                target="_blank"
                class="group flex items-center gap-2 text-white/60 hover:text-accent transition">
               <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition"
@@ -1579,7 +1658,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </a>
 
             <!-- Email -->
-            <a href="mailto:yourmail@example.com"
+            <a href="mailto:rudransh0206@gmail.com"
                class="group flex items-center gap-2 text-white/60 hover:text-accent transition">
               <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition"
                    viewBox="0 0 24 24" fill="none"
@@ -1808,37 +1887,8 @@ But tonight I cannot find my own.`,
                 gsap.to('#bar2', { rotation: -45, y: -4 });
             }
         }
-function resetOverlayState() {
-  const overlay = document.getElementById('project-overlay');
 
-  // 🔴 RESET MODE (THIS WAS MISSING)
-  overlay.classList.remove('paper-manuscript');
-
-  // ✅ Restore Film / Stage meta
-  const meta = document.querySelector('.project-meta');
-  if (meta) meta.style.display = 'grid';
-
-  // ✅ Reset Poetry
-  const poetryBox = document.getElementById('poetry-content');
-  if (poetryBox) {
-    poetryBox.classList.add('hidden');
-    poetryBox.innerHTML = '';
-  }
-
-  // ✅ Reset description
-  const desc = document.getElementById('overlay-desc');
-  if (desc) desc.innerHTML = '';
-
-  // ✅ Reset media
-  document.getElementById('overlay-video-container')?.classList.add('hidden');
-  document.getElementById('overlay-gallery-container')?.classList.add('hidden');
-
-  const iframe = document.getElementById('overlay-iframe');
-  if (iframe) iframe.src = '';
-}
-
-
-       function openProject(id) {
+        function openProject(id) {
   // 🔥 Instant tap feedback (mobile speed fix)
   if (event && event.currentTarget) {
     const card = event.currentTarget;
@@ -1885,7 +1935,7 @@ function resetOverlayState() {
 }
 
 
-function closeProject() {
+        function closeProject() {
     const overlay = document.getElementById('project-overlay');
     const iframe = document.getElementById('overlay-iframe');
 
@@ -1901,7 +1951,7 @@ function closeProject() {
     });
 }
 
-function resetAllPages() {
+        function resetAllPages() {
   document.querySelectorAll('.page-content').forEach(page => {
     gsap.killTweensOf(page);
     page.style.display = 'none';
@@ -1942,41 +1992,22 @@ function resetAllPages() {
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
-
-        
-
-     function transitionIn(nextPage, pageId) {
-  nextPage.style.display = 'block';
-  nextPage.classList.add('active');
-
-  gsap.fromTo(
-    nextPage,
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.6 }
-  );
-
-  // ❌ Removed forced global theme
-  // Body color will now respect section styles
-
-  window.scrollTo(0, 0);
-}
-function filterWorks(type) {
-  document.querySelectorAll('.pen-filter').forEach(b =>
-    b.classList.remove('pen-active')
-  );
+        function filterWorks(type) {
+  document.querySelectorAll('.pen-filter')
+    .forEach(b => b.classList.remove('pen-active'));
   event.currentTarget.classList.add('pen-active');
 
   document.querySelectorAll('.pen-item').forEach(item => {
-    if (type === 'all') {
-      item.style.display = 'block';
-    } else {
-      item.innerText.toLowerCase().includes(type)
-        ? item.style.display = 'block'
-        : item.style.display = 'none';
-    }
+    const isMatch =
+      type === 'all' ||
+      item.querySelector('.pen-type')
+          .innerText.toLowerCase()
+          .includes(type);
+    item.style.display = isMatch ? 'block' : 'none';
   });
 }
-function resetOverlayState() {
+
+        function resetOverlayState() {
   const overlay = document.getElementById('project-overlay');
 
   // Theme reset
@@ -2000,7 +2031,7 @@ function resetOverlayState() {
   const iframe = document.getElementById('overlay-iframe');
   if (iframe) iframe.src = '';
 }
-function openWriting(id) {
+        function openWriting(id) {
   const data = projectData[id];
   if (!data) return;
 
@@ -2037,12 +2068,7 @@ function openWriting(id) {
 }
 
 
-
-function rememberSocial() {
-  sessionStorage.setItem('lastPage', 'social');
-}
-
-function initCursor() {
+        function initCursor() {
   if (window.innerWidth < 1024) return;
 
   const cursor = document.getElementById('cursor');
