@@ -425,6 +425,11 @@ body.pen-active #mobile-menu .nav-link::after {
     backdrop-filter: blur(6px);
   }
 }
+@media (max-width: 768px) {
+  .noise {
+    display: none;
+  }
+}
 
 
     </style>
@@ -643,7 +648,7 @@ body.pen-active #mobile-menu .nav-link::after {
                     Sunrise bound developer, Sunset seeking writer!!
                 </h2>
                 <p class="text-lg font-serif italic text-white/60 leading-relaxed max-w-2xl mb-6">
-                    As an engineering student, I'm doing everything execpt doing engineering.
+                    As an engineering student, I'm doing everything except doing engineering.
                     <br>Poetry is where I begin, scripts and performance follow naturally.
                     I work across theatre, film, and live performance, often performing my own writing, because I trust the body to complete what language starts.
                     I’m still learning how to stay honest on the page and present on stage. 
@@ -2193,6 +2198,9 @@ window.addEventListener('popstate', () => {
   history.pushState({ page }, '', `#${page}`);
 });
 
+if (window.innerWidth >= 1024) {
+  initCursor();
+}
 
     </script>
 </body>
