@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Writer • Actor • Performer</title>
+    <title>Portfolio | Writer • Creator • Performer</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -497,7 +497,7 @@ body.pen-active #mobile-menu .nav-link::after {
   <!-- Narrative -->
   <div class="lg:col-span-2 project-narrative">
     <h4 class="font-title text-[9px] mb-2 uppercase opacity-40">
-      The Narrative
+      Project Discription
     </h4>
     <p id="overlay-desc"
        class="text-lg md:text-xl font-serif italic leading-relaxed">
@@ -997,7 +997,7 @@ body.pen-active #mobile-menu .nav-link::after {
       </div>
 
       <p class="mt-4 text-sm font-serif italic text-white/60 max-w-xs">
-         48-hour short film — scripting & performance.
+         48-hour short film making competition.
       </p>
 
     </div>
@@ -1103,6 +1103,32 @@ body.pen-active #mobile-menu .nav-link::after {
 
             <div class="poster-grid">
 
+               <div class="poster-card relative group" onclick="openProject('IMC')">
+
+                    <div class="w-full h-full bg-neutral-800 flex items-center justify-center font-title text-white/10 text-[10px] text-center p-4">
+                        Film Poster Placeholder
+                    </div>
+
+                    <div class="view-overlay absolute inset-0 flex items-center justify-center">
+  <span class="view-btn border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
+    View Details
+  </span>
+</div>
+
+
+                    <div class="poster-info">
+                        <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
+                            Documentary
+                        </span>
+                        <h3 class="text-xl md:text-2xl font-title mb-1">
+                            IMC Documentary
+                        </h3>
+                        <p class="text-[9px] font-serif italic opacity-60">
+                            Documentary on IMC waste management and how indore process its waste. 
+                        </p>
+                    </div>
+                </div>
+
                 <!-- FILM CARD -->
                 <div class="poster-card relative group" onclick="openProject('echo')">
 
@@ -1125,6 +1151,7 @@ body.pen-active #mobile-menu .nav-link::after {
 </div>
 
 
+
                     <div class="poster-info">
                         <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
                             Short Film
@@ -1139,6 +1166,7 @@ body.pen-active #mobile-menu .nav-link::after {
                     </div>
                 </div>
 
+                
                 <!-- FILM CARD -->
                 <div class="poster-card relative group" onclick="openProject('The Witness')">
 
@@ -1171,11 +1199,7 @@ body.pen-active #mobile-menu .nav-link::after {
 
 
                     
-                </div>
-
-            </div>
-        </div>
-    </div>
+           
 </section>
 
 
@@ -1282,9 +1306,9 @@ body.pen-active #mobile-menu .nav-link::after {
 
     <!-- HERO + COLLAGE -->
     <div class="relative w-full max-w-6xl mx-auto mb-32">
-      <div class="flex items-center justify-center">
+      
 
-        <!-- LEFT COLLAGE (BIG → MEDIUM → SMALL, MIRRORED) -->
+        <!--  LEFT COLLAGE (BIG → MEDIUM → SMALL, MIRRORED)
         <div
           class="hidden md:flex items-center gap-0 mr-2 flex-row-reverse"
           style="
@@ -1292,11 +1316,11 @@ body.pen-active #mobile-menu .nav-link::after {
             -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%, black 100%);
           "
         >
-          <!-- BIG -->
+          BIG
           <div class="flex flex-col opacity-100">
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1305,7 +1329,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1314,11 +1338,11 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
           </div>
 
-          <!-- MEDIUM -->
+           MEDIUM 
           <div class="flex flex-col opacity-70">
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1327,7 +1351,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1336,11 +1360,11 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
           </div>
 
-          <!-- SMALL -->
+           SMALL 
           <div class="flex flex-col opacity-35">
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1349,7 +1373,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1357,34 +1381,38 @@ body.pen-active #mobile-menu .nav-link::after {
 
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- CENTER REEL -->
-        <div
-          class="relative w-60 md:w-64 aspect-[9/16]
-                 bg-neutral-800 border border-white/10
-                 overflow-hidden z-10"
-        >
-          <video
-            src="videos/mic-main.mp4"
-            class="absolute inset-0 w-full h-full object-cover"
-            muted
-            loop
-            autoplay
-            playsinline
-          ></video>
+       <div class="flex justify-center mb-24">
+  <div
+    class="relative w-60 md:w-64 aspect-[9/16]
+           bg-neutral-800 border border-white/10
+           overflow-hidden z-10"
+  >
+    <video
+      src="DCMI/FInaldraft108030.MP4"
+      class="absolute inset-0 w-full h-full object-cover"
+      muted
+      loop
+      autoplay
+      playsinline
+    ></video>
 
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-          <div class="absolute top-3 left-3">
-            <span class="text-[9px] uppercase tracking-widest
-                         bg-amber-500 text-black px-2 py-1 font-semibold">
-              Live
-            </span>
-          </div>
-        </div>
+    <div class="absolute top-3 left-3">
+      <span class="text-[9px] uppercase tracking-widest
+                   bg-amber-500 text-black px-2 py-1 font-semibold">
+        Live
+      </span>
+    </div>
+  </div>
+</div>
 
-        <!-- RIGHT COLLAGE (BIG → MEDIUM → SMALL) -->
+
+        <!-- MOBILE IMAGE STRIP -->
+        <!-- RIGHT COLLAGE (BIG → MEDIUM → SMALL) 
         <div
           class="hidden md:flex items-center gap-0 ml-2"
           style="
@@ -1392,11 +1420,11 @@ body.pen-active #mobile-menu .nav-link::after {
             -webkit-mask-image: linear-gradient(to right, black 0%, black 65%, transparent 100%);
           "
         >
-          <!-- BIG -->
+           BIG
           <div class="flex flex-col opacity-100">
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1405,7 +1433,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
             <div class="w-24 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1414,11 +1442,11 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
           </div>
 
-          <!-- MEDIUM -->
+           MEDIUM 
           <div class="flex flex-col opacity-70">
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1427,7 +1455,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
             <div class="w-20 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
-  src="images/mic-left-01.jpg"
+  src="DCMI/profile.jpg"
   loading="lazy"
   decoding="async"
   class="w-full h-full object-cover"
@@ -1436,7 +1464,7 @@ body.pen-active #mobile-menu .nav-link::after {
             </div>
           </div>
 
-          <!-- SMALL -->
+           SMALL
           <div class="flex flex-col opacity-35">
             <div class="w-16 aspect-[9/16] overflow-hidden border border-white/10">
               <img 
@@ -1466,8 +1494,8 @@ body.pen-active #mobile-menu .nav-link::after {
       </p>
     </div>
 
-    <!-- PERFORMANCE ARCHIVE -->
-    <div class="space-y-12 mb-32">
+     PERFORMANCE ARCHIVE -->
+    <div class="space-y-12 mb-32 mt-24">
 
       <div class="flex items-center gap-4 max-w-4xl mx-auto">
         <h3 class="text-[10px] uppercase tracking-[0.3em] text-amber-500">
@@ -1543,19 +1571,16 @@ body.pen-active #mobile-menu .nav-link::after {
         </span>
 
         <h2 class="font-title text-6xl md:text-8xl leading-none font-normal">
-          The Pen.
+          The Pen
         </h2>
 
-        <p class="mt-6 font-serif italic text-black/60 text-lg">
-          “Language is the only home we can take with us.”
-        </p>
-      </div>
+     <br>
 
       <!-- Filters -->
       <div class="flex gap-6 text-[10px] tracking-widest uppercase font-semibold">
         <button onclick="filterWorks('all')" class="pen-filter pen-active">All</button>
         <button onclick="filterWorks('poem')" class="pen-filter">Poetry</button>
-        <button onclick="filterWorks('monologue')" class="pen-filter">Monologue</button>
+        <button onclick="filterWorks('monologue')" class="pen-filter">Scripts</button>
       </div>
     </header>
 
@@ -1707,22 +1732,33 @@ body.pen-active #mobile-menu .nav-link::after {
             'echo': { 
     title: 'Shuruwat', 
     role: 'ACTOR, Co - Writer', 
-    desc: 'Shuruwat is the story of a boy who loses hope after failing placements, but finds a new beginning through a friend and a simple story. It reflects how understanding your own desires matters more than meeting the world’s expectations—often realized through disappointment, art, or human connection. Made in 48 hours for a short film competition, the film was later recognized at film festivals',
-    contrib: ['Character Development', 'Physical Performance', 'Dialogue Delivery'],
+    desc: 'Shuruwat is the story of a boy who loses hope after failing placements, but finds a new beginning through a friend and a simple story. It reflects how understanding your own desires matters more than meeting the world’s expectations often realized through disappointment, art, or human connection. Made in 48 hours for a short film competition, the film was later recognized at film festivals',
+    contrib: ['Story Structure', 'Conceptulization', 'Dialogue Delivery'],
     video: 'https://www.youtube.com/embed/o5hqqDXlTnE',
-    tags: ['Short Film', 'Drama', 'Independent'],
+    tags: ['Short Film', 'Drama', 'Flim festival'],
     mediaType: 'video'
 },
 
             'The Witness': { 
                 title: 'The Witness', 
-                role: 'SUPPORTING LEAD', 
-                desc: 'A neo-noir crime thriller set in the heart of Mumbai.', 
-                contrib: ['Ensemble Performance', 'Action Choreography'], 
-                video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
-                tags: ['Feature', 'Thriller'], 
+                role: 'SUPPORTING LEAD, Writer', 
+                desc: 'A short film made for UGC in anti ragging week by our university club. A junior student, newly arrived at college, faces intense ragging and spirals into depression. His friend reports it to the anti-ragging head, who tries to settle it privately, since the bullies were his friends. But during this, a confrontation is caught on camera, making it seem like the head was also involved. All three are expelled, and the victim is beaten again. The head, an otherwise good student, is consumed by guilt for not acting sooner. In the end, it’s the head who makes a tragic choice, while the junior’s fate is left to contemplate.', 
+                contrib: ['Concept & Scripting ', 'Structure and flow','Acting'], 
+               video: 'https://drive.google.com/file/d/1LZM31U_UYjsxxSJZ4kzWNtoNPq2fdIZA/preview', 
+                tags: ['Short Film', 'Guilt'], 
                 mediaType: 'video' 
             },
+
+             'IMC': { 
+                title: 'IMC Documentary', 
+                role: 'Script writer for interview section', 
+                desc: 'This documentary documents Indore’s journey to becoming India’s Cleanest City for the seventh consecutive time by examining the waste management framework of Indore Municipal Corporation. Through a detailed breakdown of six waste-processing segments and interviews with key administrative and academic leaders, the film presents how structured governance, accountability, and citizen participation together shape a sustainable urban model.',
+                contrib: ['Script'], 
+               video: 'https://drive.google.com/file/d/1LZM31U_UYjsxxSJZ4kzWNtoNPq2fdIZA/preview', 
+                tags: ['Documentary', 'Process'], 
+                mediaType: 'video' 
+            },
+
             'virah': {
     title: 'VIRAH',
     role: 'WRITER / LEAD PERFORMER',
@@ -1932,24 +1968,28 @@ But tonight I cannot find my own.`,
 
   document.body.style.overflow = 'hidden';
   overlay.scrollTo(0, 0);
+  isOverlayOpen = true;
+
 }
 
 
-        function closeProject() {
-    const overlay = document.getElementById('project-overlay');
-    const iframe = document.getElementById('overlay-iframe');
+ function closeProject() {
+  const overlay = document.getElementById('project-overlay');
+  const iframe = document.getElementById('overlay-iframe');
 
-    if (iframe) iframe.src = ''; // stop YouTube video
+  if (iframe) iframe.src = '';
 
-    gsap.to(overlay, {
-        opacity: 0,
-        duration: 0.4,
-        onComplete: () => {
-            overlay.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
+  gsap.to(overlay, {
+    opacity: 0,
+    duration: 0.4,
+    onComplete: () => {
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      isOverlayOpen = false; // 🔥 important
+    }
+  });
 }
+
 
         function resetAllPages() {
   document.querySelectorAll('.page-content').forEach(page => {
@@ -1962,11 +2002,10 @@ But tonight I cannot find my own.`,
 }
 
 
-        function showPage(pageId) {
+function showPage(pageId, push = true) {
   const nextPage = document.getElementById(pageId);
   if (!nextPage) return;
 
-  // 🔥 HARD RESET — fixes thank-you return glitch
   resetAllPages();
 
   // Nav active state
@@ -1978,7 +2017,6 @@ But tonight I cannot find my own.`,
   // Pen theme
   document.body.classList.toggle('pen-active', pageId === 'writer');
 
-  // Show page cleanly
   nextPage.style.display = 'block';
   nextPage.classList.add('active');
 
@@ -1988,9 +2026,14 @@ But tonight I cannot find my own.`,
     { opacity: 1, y: 0, duration: 0.6, clearProps: 'transform' }
   );
 
-  // 🔥 FORCE CLEAN SCROLL
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.scrollTo({ top: 0 });
+
+  // 🔥 HISTORY PUSH
+  if (push) {
+    history.pushState({ page: pageId }, '', `#${pageId}`);
+  }
 }
+
 
         function filterWorks(type) {
   document.querySelectorAll('.pen-filter')
@@ -2065,6 +2108,8 @@ But tonight I cannot find my own.`,
 
   document.body.style.overflow = 'hidden';
   overlay.scrollTo(0, 0);
+  isOverlayOpen = true;
+
 }
 
 
@@ -2106,17 +2151,47 @@ But tonight I cannot find my own.`,
   });
 }
 
-        window.onload = () => {
-  const lastPage = sessionStorage.getItem('lastPage');
+window.onload = () => {
+  const hashPage = location.hash.replace('#', '');
   const pageToLoad =
-    lastPage && document.getElementById(lastPage)
-      ? lastPage
+    hashPage && document.getElementById(hashPage)
+      ? hashPage
       : 'home';
 
-  resetAllPages(); // 🔥 important
-  showPage(pageToLoad);
+  resetAllPages();
+  showPage(pageToLoad, false);
   initCursor();
+
+  // 🔒 LOCK EXIT (IMPORTANT)
+  history.replaceState({ page: pageToLoad }, '', `#${pageToLoad}`);
+  history.pushState({ page: pageToLoad }, '', `#${pageToLoad}`);
 };
+
+let isOverlayOpen = false;
+window.addEventListener('popstate', () => {
+
+  // 🔥 PRIORITY 1: Overlay open → close it
+  if (isOverlayOpen) {
+    closeProject();
+
+    // maintain history lock
+    history.pushState(
+      { page: location.hash.replace('#', '') || 'home' },
+      '',
+      location.hash || '#home'
+    );
+    return;
+  }
+
+  // 🔥 PRIORITY 2: Page navigation
+  const page =
+    location.hash.replace('#', '') || 'home';
+
+  showPage(page, false);
+
+  // 🔒 NEVER EXIT BROWSER
+  history.pushState({ page }, '', `#${page}`);
+});
 
 
     </script>
