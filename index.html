@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Writer • Creator • Performer</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
     
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@200;400;600&family=Bodoni+Moda:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
@@ -225,9 +224,9 @@
     inset: 0;
     pointer-events: none;
     z-index: 5;
-    background: url(giphy.gif
+    background: url(bg.jpeg
 ) center / cover no-repeat;
-    opacity: 0.15;
+    opacity: 0.30;
     mix-blend-mode: screen;
 }
 
@@ -433,6 +432,15 @@ body.pen-active #mobile-menu .nav-link::after {
 
     </style>
 </head>
+<div id="preloader" style="position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <p style="color:white;font-family:sans-serif;">Loading...</p>
+</div>
+
+<script>
+window.addEventListener('load',()=> {
+  document.getElementById('preloader').style.display='none';
+});
+</script>
 <body>
 
     <div id="cursor"></div>
@@ -2204,5 +2212,7 @@ if (window.innerWidth >= 1024) {
 }
 
     </script>
+<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </body>
 </html>
