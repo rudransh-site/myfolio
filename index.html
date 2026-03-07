@@ -535,7 +535,40 @@ window.addEventListener('load',()=> {
 </div>
 
 
-           <div id="media-container" class="pb-10 text-center">
+           <!-- SCRIPT READER -->
+<div id="overlay-pdf-container" class="hidden max-w-5xl mx-auto">
+
+  <div class="flex justify-between items-center mb-6">
+
+    <span class="font-title text-[10px] tracking-widest uppercase opacity-60">
+      Screenplay Reader
+    </span>
+
+    <a id="download-script"
+       target="_blank"
+       class="font-title text-[10px] border border-black/30 px-4 py-2 rounded-full
+              hover:bg-black hover:text-white transition">
+      Download Script
+    </a>
+
+  </div>
+
+  <div class="border border-black/20 rounded-lg overflow-hidden shadow-xl bg-white">
+
+    <object id="overlay-pdf" type="application/pdf" width="100%" height="750px">
+
+      <p class="p-6 text-center text-gray-600">
+        Your browser cannot display this PDF.
+        <a id="fallback-download" href="#" class="underline">
+          Download the script
+        </a>
+      </p>
+
+    </object>
+
+  </div>
+
+</div>
 
     <!-- VIDEO -->
   <div id="overlay-video-container" class="video-wrapper shadow-2xl hidden">
@@ -1538,8 +1571,8 @@ window.addEventListener('load',()=> {
     <!-- END NOTE -->
     <div class="max-w-xl mx-auto text-center">
       <p class="text-sm md:text-base font-serif italic text-white/50 leading-relaxed">
-        When the tide of voices pulls back,<br />
-        I’m still standing there —<br />
+        When impacting with my words,<br />
+        I’m still standing there<br />
         smaller, quieter, listening.
       </p>
 
@@ -1609,38 +1642,39 @@ window.addEventListener('load',()=> {
       <article class="pen-item" onclick="openWriting('poem-1')">
 
         <span class="pen-type">Poem</span>
-        <h3 class="pen-title">Sheeshe Ka Shehar</h3>
+        <h3 class="pen-title"> मणिकर्णिका घाट</h3>
         <p class="pen-excerpt">A city that breaks you the moment you belong.</p>
       </article>
 
       <article class="pen-item" onclick="openWriting('poem-2')">
-        <span class="pen-type">Poem</span>
-        <h3 class="pen-title">Tumhara Naam</h3>
-        <p class="pen-excerpt">I tried to forget you. Language failed first.</p>
+        <span class="pen-type">Poem/character sketch
+        </span>
+        <h3 class="pen-title">वीरांगिनी</h3>
+        <p class="pen-excerpt">the warrior</p>
       </article>
 
       <article class="pen-item" onclick="openWriting('poem-3')">
-        <span class="pen-type">Poem</span>
-        <h3 class="pen-title">Khaali Kamra</h3>
+        <span class="pen-type">monologue/ write up</span>
+        <h3 class="pen-title">Akhiri_mulakat</h3>
         <p class="pen-excerpt">Some rooms echo even after you leave.</p>
       </article>
 
       <article class="pen-item" onclick="openWriting('poem-4')">
         <span class="pen-type">Poem</span>
-        <h3 class="pen-title">Be-Awaaz Cheekhein</h3>
+        <h3 class="pen-title">मैं राख हूँ</h3>
         <p class="pen-excerpt">Silence is the loudest witness.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('poem-5')">
-        <span class="pen-type">Poem</span>
+      <article class="pen-item" onclick="openWriting('Reel')">
+        <span class="pen-type">Reel/ monologue/ dialogue </span>
         <h3 class="pen-title">Aakhri Panna</h3>
         <p class="pen-excerpt">Endings written before beginnings.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('monologue-1')">
-        <span class="pen-type">Monologue</span>
-        <h3 class="pen-title">The Last Actor</h3>
-        <p class="pen-excerpt">An actor forgets how to be himself.</p>
+      <article class="pen-item" onclick="openWriting('Street play 1')">
+        <span class="pen-type">Street play/ Monologue </span>
+        <h3 class="pen-title">Violence against women</h3>
+        <p class="pen-excerpt">Awarness for safety of women</p>
       </article>
 
     </div>
@@ -1839,70 +1873,149 @@ window.addEventListener('load',()=> {
     tags: ['Street Play', 'Cyber Safety', 'Digital Awareness'],
     mediaType: 'gallery'
 },'poem-1': {
-  title: 'Sheeshe Ka Shehar',
+  title: ' मणिकर्णिका घाट',
   role: 'POEM',
-  desc: `Sheher ki deewarein kaanch ki hain…
-Har aks thoda sa toota hua hai.`,
+  desc: `मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को,
+देख रहा हर दामन भीतर दानवों को । \n
+बात होती राजनीति की या कोसते दाम बड़े कंडों को,
+देख रहा जीवन की मीमांसा देते वो अधेड़ पंडों को ।\n
+बैठा सोचे; होगा उसका भी ऐसा कर्म, पाएगा ऐसे सपूत को,
+देख रहा पञ्चभूत को अपने भीतर के कपूत को ।\n
+सोचा, शांत मन होगा देख शांत नश्वर को,
+देख रहा ये, जगा रहा है भीतर के ईश्वर को ।\n
+लिख रहा कोई सोच चंद्रमा अपने प्रिय यार को,
+देख रहा धारा में लिखते राख से ये काल को ।\n
+सोच रहा जो बांध रखा, माया ने इस काया को,
+देख रहा वो अनंत प्रवास, परे इन बंधनों को ।।२।।\n
+मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को।।\n
+~Rudransh`,
   tags: ['Poetry'],
   mediaType: 'script'
 },
 
 'poem-2': {
-  title: 'Tumhara Naam',
+  title: 'वीरांगिनी',
   role: 'POEM',
-  desc: `Main ne koshish ki thi bhool jaane ki…
-Magar alfaaz saath nahi chhode.`,
+  desc: `वो चांद की रोशनी मे भी 
+  वृक्षच्छाया मे आई थी,
+वो हर खूबसूरत वस्तु और व्यक्ति से कुछ यू कतराई थी,
+चांद को भी दरिया के दर्पण में देख अपनी दास्ता बताई थी।
+उस शांत सेहर में वो हलचल लाई थी,
+उस दरियां के तट पर एक समुंदर लाई थीं।
+उसे हर कोई हासिल करना चाहता था
+पर अपनों से ठोकर खाई थी।
+किंतु अपनी मौजूदगी का एहसास बखूबी बतलाई थी।
+वो वीरांगिनी अतुल्य शृंगार थी,
+निर्वर्णः उसका जीवन था;
+प्रतैक जीवन वर्णक थी।
+वो हर रात्रौ छाया थी।
+जब बैठा दरिया उस पार मै जाना
+वही चन्द्रप्रकाशः पहचान थी।। वो अतुल्य शृंगार थी ।।\n
+~Rudransh`,
   contrib: [],
-  tags: ['Poetry'],
+  tags: ['Poetry','Character sketch '],
   mediaType: 'script'
 },
 
 'poem-3': {
-  title: 'Khaali Kamra',
+  title: 'aakhiri mulakat',
   role: 'POEM',
   desc: `
-    Yeh kamra khaali nahi hai,<br>
-    Bas tum nahi ho.
-
-    <br><br>
-
-    Deewaron par ab bhi<br>
-    Tumhari aahat rehti hai,<br>
-    Aur hawa tumhara naam laati hai.
+    जितनी बार मिलो, जाते हुए एक आखिरी बारक्यों मिलना होता है?
+ज़रूरी है आखिरी बार मिलना।
+वो दुनिया भर की बातें करने के बाद,
+बिना कहे उन पलों में असल जज्बातों को बताना,
+जाने से पहले गले लग जाने का सोचते रहना।
+हाँ, hmm करते हुए उस लम्हे में बातें हो जाना,
+फिर वो आँखें नम कर
+कसकर गले लगना ।
+उस पल के लिए, ज़रूरी है आखिरी बार मिलते हुए जाना।
+ये मुलाकात पर खुद को कसकर बांध के रखना,
+फिर वो समय के पूर्ण होने पर बिखर जाना।
+एहसास दिलाता है तुम्हारा खास होने का,
+इसलिए भी ज़रूरी है आखिरी बार मिलते हुए जाना।
+अब पटूंगा इस अंतराल में अगली मुलाकात तक,
+जो लिखा है अपनी किताबों में तुझे,
+मगर अब आखिरी बार तेरी आँखों में देख, तुझे पढ़ने की इजाज़त दे जाना
+फिर तेरी आँखों में, मेरे रुक्सत होने की नमी देख
+तुमसे मोहब्बत करने का एक बहाना और दे जाना
+इसलिए ज़रूरी है आखिरी बार मिलते हुए जाना।
+कल तुम रहो या ना रहो,सिर्फ इसलिए ये मुलाकात नहीं होगी।
+शायद तुमसे ज़्यादा मैं खुद को याद करूँगा,
+इस जगह पर जो मैं तुम्हारे साथ था,
+वो अब बिल्कुल नहीं रहूँगा।
+फिर रेत सी यादों को मेरे हाथ में रख बाँध देना,
+तुमसे मोहब्बत करने का एक बहाना और दे देना,
+इसलिए ज़रूरी है आखिरी बारमिलते हुए जाना।
+अब तुम्हें महसूस करेंगे तोहफे और तस्वीर के सहारे
+ध्यान रखना जरूरत नहीं, आदत हो तुम हमारे ।
+तो बस इतना एहसान करना,
+फिर एक आखिरी मुलाकात के बहाने वो रेत और नमी ले आना,
+मुझे हाथों से ज़्यादा आँखों से छू जाना,
+इसलिए एक आखिरी मुलाकात ज़रूर करके जाना।
+इतना बहुत है ये बताने के लिए क्यों आखिरी बार मिलना ज़रूरी होता है।
   `,
-  tags: ['Poetry'],
+  tags: ['write up'],
   mediaType: 'script'
 }
 ,
 
 'poem-4': {
-  title: 'Be-Awaaz Cheekhein',
+  title: 'मैं राख हूँ',
   role: 'POEM',
-  desc: `Jo suna nahi gaya,
-Wahi sabse zyada cheekha.`,
+  desc: `मैं राख हूँ,
+मैं आग नहीं,
+जोश है, मगर खाक नहीं।
+मैं,न जल प्रभाव से मिट पाऊंगा,
+मैं उसमें ही मिल जाऊंगा।
+न शीत पवन की लहरों से ओझल हो पाऊंगा,
+मैं संग उसके उड़, कण-कण में मिल जाऊंगा।
+मैं वह चिंगारी नहीं, जो चिता पर बुझ जाऊंगा,
+मैं वह शेषांश हूँ,जो धरा के संग मिल जाऊँगा,
+मैं वो राख हूँ, मैं आग नहीं।
+मैं पूजा की स्माई नहीं,
+मैं महादेव की भस्म सही,
+मैं राख हूँ, मैं आग नहीं।
+न सूरज सा तेज मुझमें,
+चाँद सी चाँदनी है।
+माना, उतनी चमक नहीं,
+पर उतनी निर्मल मेरी वाणी है।
+उतनी शीतल मेरी काया है।
+मैं राख हूँ, मैं आग नहीं।
+न जलन की आग मुझमें,
+न अहंकार की ज्वाला हु,
+मैं अपने स्वप्नों दूर कर बैठा हु,
+झूठे शीश महल थोड़ कर बैठा हु,
+मैं भीतर घर कर बैठा हु।
+मैं अब धूल में भी अमृत हूँ ।
+इस संघर्ष की आग से
+मैं क्या तपु
+मैं क्या जलू
+में आग नहीं,
+मैं राख हूँ
+मगर इस अग्नि की पहचान हूँ।
+मैं शून्य में समा, अनंत का प्रमाण हूँ।
+अग्नि का समर्पण हु
+और इस धरा का सम्मान हूँ।.`,
   contrib: [],
   tags: ['Poetry'],
   mediaType: 'script'
 },
 
-'poem-5': {
+'Reel': {
   title: 'Aakhri Panna',
-  role: 'POEM',
-  desc: `Kahani shuru hone se pehle hi
-Khaali chhod di gayi.`,
-  contrib: [],
-  tags: ['Poetry'],
-  mediaType: 'script'
+  role: 'Short story',
+  pdf: 'assets/scripts/short_reel_series.pdf',
+  tags: ['Short Story reel'],
+  mediaType: 'pdf'
 },
 
-'monologue-1': {
-  title: 'The Last Actor',
-  role: 'MONOLOGUE',
-  desc: `I have lived a thousand lives on stage,
-But tonight I cannot find my own.`,
-  contrib: [],
-  tags: ['Monologue'],
-  mediaType: 'script'
+'Street play 1': {
+  title: 'Violence against women',
+  role: 'Street play',
+  pdf: 'assets/scripts/street_play.pdf',
+  tags: ['Dialogue', 'Script'],
+  mediaType: 'pdf'
 },
 
 
@@ -2084,13 +2197,22 @@ function showPage(pageId, push = true) {
   document.getElementById('overlay-desc').innerHTML = '';
 
   // Media reset
-  document.getElementById('overlay-video-container').classList.add('hidden');
-  document.getElementById('overlay-gallery-container').classList.add('hidden');
+  // Media reset
+document.getElementById('overlay-video-container').classList.add('hidden');
+document.getElementById('overlay-gallery-container').classList.add('hidden');
 
-  const iframe = document.getElementById('overlay-iframe');
-  if (iframe) iframe.src = '';
+const iframe = document.getElementById('overlay-iframe');
+if (iframe) iframe.src = '';
+
+// PDF reset
+const pdfContainer = document.getElementById('overlay-pdf-container');
+const pdfObject = document.getElementById('overlay-pdf');
+
+if (pdfContainer) pdfContainer.classList.add('hidden');
+if (pdfObject) pdfObject.data = '';
 }
-        function openWriting(id) {
+  function openWriting(id) {
+
   const data = projectData[id];
   if (!data) return;
 
@@ -2099,33 +2221,55 @@ function showPage(pageId, push = true) {
   const overlay = document.getElementById('project-overlay');
   const poetryBox = document.getElementById('poetry-content');
 
+  const pdfContainer = document.getElementById('overlay-pdf-container');
+  const pdfFrame = document.getElementById('overlay-pdf');
+  const downloadBtn = document.getElementById('download-script');
+
   // PAPER MODE
   overlay.classList.add('paper-manuscript');
 
-  // Header
   document.getElementById('overlay-title').innerText = data.title;
   document.getElementById('overlay-role').innerText = data.role;
 
-  // Hide film/stage meta ONLY
   document.querySelector('.project-meta').style.display = 'none';
 
-  // Show poetry
-  poetryBox.classList.remove('hidden');
-  poetryBox.innerHTML = data.desc.replace(/\n/g, '<br>');
-
-  // Tags
   document.getElementById('overlay-tags').innerHTML =
     (data.tags || []).map(t =>
       `<span class="work-tag mr-2">${t}</span>`
     ).join('');
+
+  // TEXT POETRY
+  if (data.mediaType === 'script') {
+
+    poetryBox.classList.remove('hidden');
+    poetryBox.innerHTML = data.desc.replace(/\n/g, '<br>');
+
+  }
+
+  // PDF SCRIPT
+ if (data.mediaType === 'pdf') {
+
+  const pdfContainer = document.getElementById('overlay-pdf-container');
+  const pdfObject = document.getElementById('overlay-pdf');
+  const downloadBtn = document.getElementById('download-script');
+  const fallbackDownload = document.getElementById('fallback-download');
+
+  pdfContainer.classList.remove('hidden');
+
+  pdfObject.data = data.pdf;
+
+  if (downloadBtn) downloadBtn.href = data.pdf;
+  if (fallbackDownload) fallbackDownload.href = data.pdf;
+
+}
 
   overlay.style.display = 'block';
   gsap.to(overlay, { opacity: 1, duration: 0.4 });
 
   document.body.style.overflow = 'hidden';
   overlay.scrollTo(0, 0);
-  isOverlayOpen = true;
 
+  isOverlayOpen = true;
 }
 
 
