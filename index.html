@@ -187,7 +187,86 @@
   color: rgba(255,255,255,0.7);
 }
 
+/* ===== POEM READER FORMAT (same as featured poem) ===== */
+/* =============================== */
+/* POEM READER (MATCH FEATURED) */
+/* =============================== */
+/* =============================== */
+/* POEM READER */
+/* =============================== */
 
+#poetry-content{
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(16px,1.6vw,19px);
+  line-height: 1.45;
+  color: rgba(30,18,10,0.7);
+  text-align:center;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* poem line */
+#poetry-content .fp-line{
+  display:block;
+  margin:0;
+  padding:0;
+}
+
+/* highlighted poetic line */
+#poetry-content .pull{
+  color:rgba(139,46,15,0.85);
+  font-weight:500;
+  border-left:2px solid rgba(139,46,15,0.45);
+  padding-left:0.7rem;
+  margin:0.05em 0;
+}
+
+/* stanza spacing */
+#poetry-content .fp-gap{
+  display:block;
+  height:0.45em;
+}
+
+/* signature */
+#poetry-content .fp-sig{
+  display:block;
+  margin-top:1.6rem;
+  font-family:'Syncopate',sans-serif;
+  font-size:8px;
+  letter-spacing:.45em;
+  text-transform:uppercase;
+  color:rgba(30,18,10,0.35);
+}
+
+/* =============================== */
+/* WRITE-UP / PROSE FORMAT */
+/* =============================== */
+
+#poetry-content.prose-mode{
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(17px,1.7vw,20px);
+  line-height: 1.7;
+  color: rgba(30,18,10,0.7);
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* paragraph spacing */
+#poetry-content.prose-mode p{
+  margin-bottom: 1rem;
+}
+
+/* signature */
+#poetry-content.prose-mode .fp-sig{
+  display:block;
+  margin-top:2rem;
+  font-family:'Syncopate',sans-serif;
+  font-size:8px;
+  letter-spacing:.45em;
+  text-transform:uppercase;
+  color:rgba(30,18,10,0.35);
+}
 
 #writer::before {
   content: "";
@@ -433,7 +512,22 @@ body.pen-active #mobile-menu .nav-link::after {
     </style>
 </head>
 <div id="preloader" style="position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;">
-  <p style="color:white;font-family:sans-serif;">Loading...</p>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+<p style="
+    color:white;
+    font-family:'Syncopate', sans-serif;
+    font-weight:400;
+    font-size:11px;
+    letter-spacing:0.5em;
+    text-transform:uppercase;
+    animation: blink 1.1s ease-in-out infinite;
+  ">feat. rudransh</p>
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.08; }
+    }
+  </style>
 </div>
 
 <script>
@@ -823,7 +917,7 @@ window.addEventListener('load',()=> {
 
         <!-- OUTER BULLET -->
         <li class="text-white">
-            Shuruwat — 48-Hour Short Film (Festival Project)
+            Shuruwat : 48-Hour Short Film (Festival Project)
         </li>
 
         <!-- INNER BULLETS -->
@@ -1145,7 +1239,7 @@ window.addEventListener('load',()=> {
         <div class="bg-black/100 border border-white/10 rounded-2xl p-8 md:p-12">
 
             <h2 class="text-[10px] font-title tracking-[0.4em] text-accent mb-12 md:mb-20 uppercase">
-                Filmography
+                Flimography
             </h2>
 
             <div class="poster-grid">
@@ -1588,33 +1682,231 @@ window.addEventListener('load',()=> {
 
 
     <!-- 6. THE PEN -->
+<!-- 6. THE PEN -->
 <section
   id="writer"
   class="page-content min-h-screen px-6 md:px-12 text-[#2b1d12]"
   style="
     background-color: #e9dfcf;
-
-    /* coffee stains + paper fibers */
     background-image:
       radial-gradient(circle at 20% 30%, rgba(90,60,30,0.08), transparent 40%),
       radial-gradient(circle at 80% 70%, rgba(90,60,30,0.06), transparent 45%),
       radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
       url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-
-    background-size:
-      600px 600px,
-      700px 700px,
-      18px 18px,
-      auto;
+    background-size: 600px 600px, 700px 700px, 18px 18px, auto;
   "
 >
 
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet"/>
 
-  <div class="max-w-7xl mx-auto py-24 md:py-32">
+  <style>
 
-    <!-- Header -->
-    <header class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-10">
+    /* ── FILTER BUTTONS ── */
+    .pen-filter {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: rgba(30,18,10,0.4);
+      border-bottom: 1px solid transparent;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      padding-bottom: 3px;
+      background: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .pen-filter:hover,
+    .pen-filter.pen-active {
+      color: #1e120a;
+      border-bottom-color: #1e120a;
+    }
+
+    /* ── FEATURED POEM BLOCK ── */
+    #pen-featured {
+      margin-top: 4rem;
+      transition: opacity 0.4s ease, max-height 0.5s ease;
+      max-height: 1000px;
+      overflow: hidden;
+    }
+    #pen-featured.hidden-featured {
+      opacity: 0;
+      max-height: 0;
+      pointer-events: none;
+    }
+
+    .fp-eyebrow {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: rgba(30,18,10,0.32);
+      display: block;
+      margin-bottom: 2rem;
+    }
+    .fp-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 1.0;
+      color: #1e120a;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+    .fp-rule {
+      width: 48px;
+      height: 2px;
+      background: rgba(139,46,15,0.55);
+      display: block;
+      margin-bottom: 2.5rem;
+    }
+    .fp-lines {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(15px, 1.7vw, 19px);
+      font-weight: 300;
+      line-height: 2.3;
+      color: rgba(30,18,10,0.55);
+    }
+    .fp-line { display: block; }
+    .fp-line.pull {
+      color: rgba(139,46,15,0.85);
+      font-weight: 500;
+      border-left: 2px solid rgba(139,46,15,0.45);
+      padding-left: 1rem;
+      margin: 0.4em 0;
+      font-size: clamp(17px, 2vw, 22px);
+    }
+    .fp-gap { display: block; height: 1.2em; }
+    .fp-sig {
+      display: block;
+      margin-top: 2rem;
+      font-family: 'Syncopate', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(30,18,10,0.3);
+    }
+
+    /* ── SIDEBAR ── */
+    .fp-sidebar {
+      border-left: 1px solid rgba(30,18,10,0.1);
+      padding-left: 2.5rem;
+    }
+    .fp-sb-label {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 7px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(30,18,10,0.28);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .fp-sb-text {
+      font-family: 'Bodoni Moda', serif;
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(30,18,10,0.5);
+      margin-bottom: 2rem;
+    }
+    .fp-sb-num {
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      color: rgba(30,18,10,0.1);
+      line-height: 1;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    /* ── READ LINK ── */
+    .fp-read-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'Syncopate', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(139,46,15,0.7);
+      border-bottom: 1px solid rgba(139,46,15,0.3);
+      padding-bottom: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .fp-read-link:hover {
+      color: rgba(139,46,15,1);
+      border-bottom-color: rgba(139,46,15,0.8);
+    }
+
+    /* ── PAPER TEAR ── */
+    .pen-tear {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin: 3rem 0;
+    }
+    .pen-tear svg { width: 100%; height: 20px; }
+
+    /* ── GRID ITEMS ── */
+    .pen-item {
+      cursor: pointer;
+      border-left: 1px solid rgba(0,0,0,0.15);
+      padding-left: 1.5rem;
+      transition: all .4s ease;
+    }
+    .pen-item:hover {
+      transform: translateY(-6px);
+      border-left-color: rgba(139,46,15,0.6);
+    }
+    .pen-type {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 7px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(30,18,10,0.35);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .pen-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(18px, 2.2vw, 24px);
+      margin-bottom: 0.5rem;
+      color: #1e120a;
+      line-height: 1.2;
+    }
+    .pen-excerpt {
+      font-family: 'Bodoni Moda', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: rgba(30,18,10,0.5);
+      line-height: 1.6;
+    }
+
+    /* ── FEATURED GRID: responsive ── */
+    .fp-grid {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 860px) {
+      .fp-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .fp-sidebar { display: none; }
+    }
+
+  </style>
+
+  <div class="max-w-7xl mx-auto py-16 md:py-24">
+
+    <!-- ── HEADER ── -->
+    <header class="mb-0 flex flex-col md:flex-row md:items-end justify-between gap-8">
       <div class="max-w-2xl">
+
         <span class="text-[10px] tracking-[0.6em] uppercase text-black/40 block mb-4">
           Archive of Thoughts
         </span>
@@ -1623,64 +1915,248 @@ window.addEventListener('load',()=> {
           The Pen
         </h2>
 
-     <br>
+        <!-- Gap between title and filters -->
+        <div class="flex gap-6 text-[10px] tracking-widest uppercase font-semibold" style="margin-top: 2.5rem;">
+          <button onclick="penFilter('all', this)" class="pen-filter pen-active">All</button>
+          <button onclick="penFilter('poem', this)" class="pen-filter">Poetry</button>
+          <button onclick="penFilter('monologue', this)" class="pen-filter">Scripts</button>
+        </div>
 
-      <!-- Filters -->
-      <div class="flex gap-6 text-[10px] tracking-widest uppercase font-semibold">
-        <button onclick="filterWorks('all')" class="pen-filter pen-active">All</button>
-        <button onclick="filterWorks('poem')" class="pen-filter">Poetry</button>
-        <button onclick="filterWorks('monologue')" class="pen-filter">Scripts</button>
       </div>
     </header>
 
-    <!-- Grid -->
+    <!-- ══════════════════════════════════
+         FEATURED POEM — visible on page
+    ══════════════════════════════════ -->
+    <div id="pen-featured">
+
+      <div class="fp-grid">
+
+        <!-- LEFT: poem text -->
+        <div>
+          <span class="fp-eyebrow">Featured Poem · मणिकर्णिका घाट</span>
+          <h3 class="fp-title">मणिकर्णिका<br>घाट</h3>
+          <span class="fp-rule"></span>
+
+          <div class="fp-lines">
+            <span class="fp-line">मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को,</span>
+            <span class="fp-line pull">देख रहा हर दामन भीतर दानवों को।</span>
+            <span class="fp-gap"></span>
+            <span class="fp-line">सोचा, शांत मन होगा देख शांत नश्वर को,</span>
+            <span class="fp-line pull">देख रहा ये, जगा रहा है भीतर के ईश्वर को।</span>
+            <span class="fp-gap"></span>
+            <span class="fp-line">सोच रहा जो बांध रखा, माया ने इस काया को,</span>
+            <span class="fp-line pull">देख रहा वो अनंत प्रवास, परे इन बंधनों को।।</span>
+            <span class="fp-sig">— Rudransh Sharma</span>
+          </div>
+
+          <span class="fp-read-link" onclick="openWriting('poem-1')">Read full poem →</span>
+        </div>
+
+        <!-- RIGHT: sidebar annotations -->
+        <div class="fp-sidebar">
+          <span class="fp-sb-label">Setting</span>
+          <p class="fp-sb-text">Manikarnika Ghat, Varanasi <br>where the living watch the dead.</p>
+
+          <span class="fp-sb-label">Form</span>
+          <p class="fp-sb-text">Observational verse.<br>Each couplet turns inward.</p>
+
+          <span class="fp-sb-label">Lines</span>
+          <span class="fp-sb-num">12</span>
+
+          <span class="fp-sb-label">Theme</span>
+          <p class="fp-sb-text">"A city that breaks you the moment you belong."</p>
+        </div>
+
+      </div>
+
+      <!-- paper tear between featured and grid -->
+      <div class="pen-tear">
+        <svg viewBox="0 0 1400 20" preserveAspectRatio="none" fill="none">
+          <path d="M0 10 Q200 0 400 10 Q600 20 800 8 Q1000 0 1200 12 Q1300 18 1400 6 L1400 20 L0 20 Z"
+                fill="rgba(30,18,10,0.05)"/>
+        </svg>
+      </div>
+
+    </div>
+    <!-- end #pen-featured -->
+     <!-- ══════════════════════════════════
+     FEATURED SCRIPT
+══════════════════════════════════ -->
+<div id="pen-featured-script">
+
+  <div class="pen-tear">
+    <svg viewBox="0 0 1400 20" preserveAspectRatio="none" fill="none">
+      <path d="M0 10 Q200 0 400 10 Q600 20 800 8 Q1000 0 1200 12 Q1300 18 1400 6 L1400 20 L0 20 Z"
+            fill="rgba(30,18,10,0.05)"/>
+    </svg>
+  </div>
+
+  <div class="fp-grid" style="margin-top: 3rem;">
+
+    <!-- LEFT: clean script card -->
+    <div>
+      <span class="fp-eyebrow">Featured Script · Short Film</span>
+      <h3 class="fp-title">The<br>Witness</h3>
+      <span class="fp-rule"></span>
+
+     <p style="
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(30,18,10,0.6);
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+">
+  A junior arrives full of hope. Ragging breaks him quietly from within.
+  A friend reports. The anti-ragging head someone with the power to act
+  chooses to protect his own friend, settling it in silence.
+  A camera catches the wrong moment. Three are expelled.
+  The head, who witnessed everything and still looked away,
+  is consumed not by punishment but by what he chose to become.
+  The witness was never the camera. It was his own conscience.
+</p>
+
+<p style="
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: rgba(139,46,15,0.7);
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+">
+  🏆 Best Short Film at Akshan Short Film Competition
+</p>
+
+      <p style="
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        color: rgba(30,18,10,0.38);
+        letter-spacing: 0.04em;
+        margin-bottom: 2rem;
+      ">
+        Written & performed for UGC Anti-Ragging Week · 2025
+      </p>
+
+      <span class="fp-read-link" onclick="openWriting('featured-script')">Read the script →</span>
+    </div>
+
+    <!-- RIGHT: sidebar — this is the main panel -->
+    <div class="fp-sidebar">
+
+      <span class="fp-sb-label">Recognition</span>
+      <p class="fp-sb-text" style="font-size:15px; color:rgba(30,18,10,0.75); font-style:normal; font-family:'Outfit',sans-serif;">
+        🏆 Best Film Award<br>
+        <span style="font-size:12px; color:rgba(30,18,10,0.45);">Annual University Event at Akshan Film Competition</span>
+      </p>
+
+      <span class="fp-sb-label" style="margin-top:1.5rem; display:block;">Format</span>
+      <p class="fp-sb-text">Short Film Script</p>
+
+      <span class="fp-sb-label" style="margin-top:1.5rem; display:block;">Made For</span>
+      <p class="fp-sb-text">UGC · Anti-Ragging Week</p>
+
+      <span class="fp-sb-label" style="margin-top:1.5rem; display:block;">Role</span>
+      <p class="fp-sb-text">Writer · Actor</p>
+
+      <span class="fp-sb-label" style="margin-top:1.5rem; display:block;">Theme</span>
+      <p class="fp-sb-text">"The cost of silence when it matters most."</p>
+
+      <div style="
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(30,18,10,0.1);
+      ">
+        <span class="fp-sb-label">Script</span>
+        <span
+          onclick="openWriting('featured-script')"
+          style="
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: rgba(139,46,15,0.8);
+            border: 1px solid rgba(139,46,15,0.3);
+            padding: 8px 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          "
+          onmouseover="this.style.background='rgba(139,46,15,0.08)'"
+          onmouseout="this.style.background='none'"
+        >
+          Open Script Reader
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="pen-tear" style="margin-top: 3rem;">
+    <svg viewBox="0 0 1400 20" preserveAspectRatio="none" fill="none">
+      <path d="M0 14 Q200 4 400 14 Q600 22 800 10 Q1000 2 1200 14 Q1300 20 1400 8 L1400 20 L0 20 Z"
+            fill="rgba(30,18,10,0.05)"/>
+    </svg>
+  </div>
+
+</div>
+    <!-- ══════════════════════════════════
+         WRITING GRID
+    ══════════════════════════════════ -->
     <div
       id="writing-grid"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20"
     >
 
-      <article class="pen-item" onclick="openWriting('poem-1')">
-
+      <article class="pen-item" data-type="poem" onclick="openWriting('poem-1')">
         <span class="pen-type">Poem</span>
-        <h3 class="pen-title"> मणिकर्णिका घाट</h3>
+        <h3 class="pen-title">मणिकर्णिका घाट</h3>
         <p class="pen-excerpt">A city that breaks you the moment you belong.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('poem-2')">
-        <span class="pen-type">Poem/character sketch
-        </span>
+      <article class="pen-item" data-type="poem" onclick="openWriting('poem-2')">
+        <span class="pen-type">Poem · Character Sketch</span>
         <h3 class="pen-title">वीरांगिनी</h3>
-        <p class="pen-excerpt">the warrior</p>
+        <p class="pen-excerpt">The warrior.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('poem-3')">
-        <span class="pen-type">monologue/ write up</span>
-        <h3 class="pen-title">Akhiri_mulakat</h3>
+      <article class="pen-item" data-type="monologue" onclick="openWriting('poem-3')">
+        <span class="pen-type">Monologue · Write-up</span>
+        <h3 class="pen-title">Aakhiri Mulakat</h3>
         <p class="pen-excerpt">Some rooms echo even after you leave.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('poem-4')">
+      <article class="pen-item" data-type="poem" onclick="openWriting('poem-4')">
         <span class="pen-type">Poem</span>
         <h3 class="pen-title">मैं राख हूँ</h3>
         <p class="pen-excerpt">Silence is the loudest witness.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('Reel')">
-        <span class="pen-type">Reel/ monologue/ dialogue </span>
-        <h3 class="pen-title">Aakhri Panna</h3>
+      <article class="pen-item" data-type="monologue" onclick="openWriting('Reel')">
+        <span class="pen-type">Reel · Monologue · Dialogue</span>
+        <h3 class="pen-title">Cache</h3>
         <p class="pen-excerpt">Endings written before beginnings.</p>
       </article>
 
-      <article class="pen-item" onclick="openWriting('Street play 1')">
-        <span class="pen-type">Street play/ Monologue </span>
-        <h3 class="pen-title">Violence against women</h3>
-        <p class="pen-excerpt">Awarness for safety of women</p>
+      <article class="pen-item" data-type="monologue" onclick="openWriting('Street play 1')">
+        <span class="pen-type">Street Play · Monologue</span>
+        <h3 class="pen-title">Violence Against Women</h3>
+        <p class="pen-excerpt">Awareness for safety of women.</p>
       </article>
 
+      <article class="pen-item" data-type="monologue" onclick="openWriting('featured-script')">
+  <span class="pen-type">Short Film Script · Anti-Ragging · UGC</span>
+  <h3 class="pen-title">The Witness</h3>
+  <p class="pen-excerpt">🏆 Best Film at Annual University Event. A short film on the quiet cost of staying silent against ragging.</p>
+</article>
+
     </div>
+
   </div>
 </section>
-
 
 
     <!-- 7. SOCIALS -->
@@ -1872,138 +2348,203 @@ window.addEventListener('load',()=> {
     ],
     tags: ['Street Play', 'Cyber Safety', 'Digital Awareness'],
     mediaType: 'gallery'
-},'poem-1': {
-  title: ' मणिकर्णिका घाट',
-  role: 'POEM',
-  desc: `मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को,
-देख रहा हर दामन भीतर दानवों को । \n
-बात होती राजनीति की या कोसते दाम बड़े कंडों को,
-देख रहा जीवन की मीमांसा देते वो अधेड़ पंडों को ।\n
-बैठा सोचे; होगा उसका भी ऐसा कर्म, पाएगा ऐसे सपूत को,
-देख रहा पञ्चभूत को अपने भीतर के कपूत को ।\n
-सोचा, शांत मन होगा देख शांत नश्वर को,
-देख रहा ये, जगा रहा है भीतर के ईश्वर को ।\n
-लिख रहा कोई सोच चंद्रमा अपने प्रिय यार को,
-देख रहा धारा में लिखते राख से ये काल को ।\n
-सोच रहा जो बांध रखा, माया ने इस काया को,
-देख रहा वो अनंत प्रवास, परे इन बंधनों को ।।२।।\n
-मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को।।\n
-~Rudransh`,
-  tags: ['Poetry'],
-  mediaType: 'script'
+},
+
+'poem-1': {
+title: 'मणिकर्णिका घाट',
+role: 'POEM',
+desc: `
+<span class="fp-line">मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को,</span>
+<span class="fp-line pull">देख रहा हर दामन भीतर दानवों को ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">बात होती राजनीति की या कोसते दाम बड़े कंडों को,</span>
+<span class="fp-line pull">देख रहा जीवन की मीमांसा देते वो अधेड़ पंडों को ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">बैठा सोचे; होगा उसका भी ऐसा कर्म, पाएगा ऐसे सपूत को,</span>
+<span class="fp-line pull">देख रहा पञ्चभूत को अपने भीतर के कपूत को ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">सोचा, शांत मन होगा देख शांत नश्वर को,</span>
+<span class="fp-line pull">देख रहा ये, जगा रहा है भीतर के ईश्वर को ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">लिख रहा कोई सोच चंद्रमा अपने प्रिय यार को,</span>
+<span class="fp-line pull">देख रहा धारा में लिखते राख से ये काल को ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">सोच रहा जो बांध रखा, माया ने इस काया को,</span>
+<span class="fp-line pull">देख रहा वो अनंत प्रवास, परे इन बंधनों को ।।२।।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मणिकर्णिका घाट पर बैठा सोच रहा इंसानो को।।</span>
+
+<span class="fp-sig">~ Rudransh</span>
+`,
+tags:['Poetry'],
+mediaType:'script'
 },
 
 'poem-2': {
   title: 'वीरांगिनी',
   role: 'POEM',
-  desc: `वो चांद की रोशनी मे भी 
-  वृक्षच्छाया मे आई थी,
-वो हर खूबसूरत वस्तु और व्यक्ति से कुछ यू कतराई थी,
-चांद को भी दरिया के दर्पण में देख अपनी दास्ता बताई थी।
-उस शांत सेहर में वो हलचल लाई थी,
-उस दरियां के तट पर एक समुंदर लाई थीं।
-उसे हर कोई हासिल करना चाहता था
-पर अपनों से ठोकर खाई थी।
-किंतु अपनी मौजूदगी का एहसास बखूबी बतलाई थी।
-वो वीरांगिनी अतुल्य शृंगार थी,
-निर्वर्णः उसका जीवन था;
-प्रतैक जीवन वर्णक थी।
-वो हर रात्रौ छाया थी।
-जब बैठा दरिया उस पार मै जाना
-वही चन्द्रप्रकाशः पहचान थी।। वो अतुल्य शृंगार थी ।।\n
-~Rudransh`,
+  desc: `
+
+<span class="fp-line">वो चांद की रोशनी मे भी</span>
+<span class="fp-line">वृक्षच्छाया मे आई थी,</span>
+<span class="fp-line">वो हर खूबसूरत वस्तु और व्यक्ति से कुछ यू कतराई थी,</span>
+<span class="fp-line">चांद को भी दरिया के दर्पण में देख अपनी दास्ता बताई थी।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">उस शांत सेहर में वो हलचल लाई थी,</span>
+<span class="fp-line">उस दरियां के तट पर एक समुंदर लाई थीं।</span>
+<span class="fp-line">उसे हर कोई हासिल करना चाहता था</span>
+<span class="fp-line">पर अपनों से ठोकर खाई थी।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">किंतु अपनी मौजूदगी का एहसास बखूबी बतलाई थी।</span>
+<span class="fp-line">वो वीरांगिनी अतुल्य शृंगार थी,</span>
+<span class="fp-line">निर्वर्णः उसका जीवन था;</span>
+<span class="fp-line">प्रतैक जीवन वर्णक थी।</span>
+<span class="fp-line">वो हर रात्रौ छाया थी।</span>
+<span class="fp-line">जब बैठा दरिया उस पार मै जाना</span>
+<span class="fp-line">वही चन्द्रप्रकाशः पहचान थी।।</span>
+
+<span class="fp-line">वो अतुल्य शृंगार थी ।।</span>
+
+<span class="fp-sig">~ Rudransh</span>
+
+`,
   contrib: [],
   tags: ['Poetry','Character sketch '],
   mediaType: 'script'
 },
 
 'poem-3': {
-  title: 'aakhiri mulakat',
-  role: 'POEM',
-  desc: `
-    जितनी बार मिलो, जाते हुए एक आखिरी बारक्यों मिलना होता है?
-ज़रूरी है आखिरी बार मिलना।
-वो दुनिया भर की बातें करने के बाद,
-बिना कहे उन पलों में असल जज्बातों को बताना,
-जाने से पहले गले लग जाने का सोचते रहना।
-हाँ, hmm करते हुए उस लम्हे में बातें हो जाना,
-फिर वो आँखें नम कर
-कसकर गले लगना ।
-उस पल के लिए, ज़रूरी है आखिरी बार मिलते हुए जाना।
-ये मुलाकात पर खुद को कसकर बांध के रखना,
-फिर वो समय के पूर्ण होने पर बिखर जाना।
-एहसास दिलाता है तुम्हारा खास होने का,
-इसलिए भी ज़रूरी है आखिरी बार मिलते हुए जाना।
-अब पटूंगा इस अंतराल में अगली मुलाकात तक,
-जो लिखा है अपनी किताबों में तुझे,
-मगर अब आखिरी बार तेरी आँखों में देख, तुझे पढ़ने की इजाज़त दे जाना
-फिर तेरी आँखों में, मेरे रुक्सत होने की नमी देख
-तुमसे मोहब्बत करने का एक बहाना और दे जाना
-इसलिए ज़रूरी है आखिरी बार मिलते हुए जाना।
-कल तुम रहो या ना रहो,सिर्फ इसलिए ये मुलाकात नहीं होगी।
-शायद तुमसे ज़्यादा मैं खुद को याद करूँगा,
-इस जगह पर जो मैं तुम्हारे साथ था,
-वो अब बिल्कुल नहीं रहूँगा।
-फिर रेत सी यादों को मेरे हाथ में रख बाँध देना,
-तुमसे मोहब्बत करने का एक बहाना और दे देना,
-इसलिए ज़रूरी है आखिरी बारमिलते हुए जाना।
-अब तुम्हें महसूस करेंगे तोहफे और तस्वीर के सहारे
-ध्यान रखना जरूरत नहीं, आदत हो तुम हमारे ।
-तो बस इतना एहसान करना,
-फिर एक आखिरी मुलाकात के बहाने वो रेत और नमी ले आना,
-मुझे हाथों से ज़्यादा आँखों से छू जाना,
-इसलिए एक आखिरी मुलाकात ज़रूर करके जाना।
-इतना बहुत है ये बताने के लिए क्यों आखिरी बार मिलना ज़रूरी होता है।
-  `,
-  tags: ['write up'],
-  mediaType: 'script'
+title:'Aakhiri Mulakat',
+role:'WRITE UP',
+desc:`
+
+<p>जितनी बार मिलो, जाते हुए एक आखिरी बार क्यों मिलना होता है? ज़रूरी है आखिरी बार मिलना। वो दुनिया भर की बातें करने के बाद, बिना कहे उन पलों में असल जज्बातों को बताना, जाने से पहले गले लग जाने का सोचते रहना। हाँ, hmm करते हुए उस लम्हे में बातें हो जाना, फिर वो आँखें नम कर कसकर गले लगना। उस पल के लिए, ज़रूरी है आखिरी बार मिलते हुए जाना।</p>
+
+<p>ये मुलाकात पर खुद को कसकर बांध के रखना, फिर वो समय के पूर्ण होने पर बिखर जाना। एहसास दिलाता है तुम्हारा खास होने का, इसलिए भी ज़रूरी है आखिरी बार मिलते हुए जाना। अब पटूंगा इस अंतराल में अगली मुलाकात तक, जो लिखा है अपनी किताबों में तुझे, मगर अब आखिरी बार तेरी आँखों में देख, तुझे पढ़ने की इजाज़त दे जाना।</p>
+
+<p>फिर तेरी आँखों में, मेरे रुक्सत होने की नमी देख तुमसे मोहब्बत करने का एक बहाना और दे जाना। इसलिए ज़रूरी है आखिरी बार मिलते हुए जाना। कल तुम रहो या ना रहो, सिर्फ इसलिए ये मुलाकात नहीं होगी। शायद तुमसे ज़्यादा मैं खुद को याद करूँगा, इस जगह पर जो मैं तुम्हारे साथ था, वो अब बिल्कुल नहीं रहूँगा।</p>
+
+<p>फिर रेत सी यादों को मेरे हाथ में रख बाँध देना, तुमसे मोहब्बत करने का एक बहाना और दे देना, इसलिए ज़रूरी है आखिरी बार मिलते हुए जाना। अब तुम्हें महसूस करेंगे तोहफे और तस्वीर के सहारे। ध्यान रखना जरूरत नहीं, आदत हो तुम हमारे।</p>
+
+<p>तो बस इतना एहसान करना, फिर एक आखिरी मुलाकात के बहाने वो रेत और नमी ले आना, मुझे हाथों से ज़्यादा आँखों से छू जाना। इसलिए एक आखिरी मुलाकात ज़रूर करके जाना। इतना बहुत है ये बताने के लिए क्यों आखिरी बार मिलना ज़रूरी होता है।</p>
+
+<span class="fp-sig">~ Rudransh</span>
+
+`,
+tags:['Write up'],
+mediaType:'script'
 }
 ,
 
 'poem-4': {
-  title: 'मैं राख हूँ',
-  role: 'POEM',
-  desc: `मैं राख हूँ,
-मैं आग नहीं,
-जोश है, मगर खाक नहीं।
-मैं,न जल प्रभाव से मिट पाऊंगा,
-मैं उसमें ही मिल जाऊंगा।
-न शीत पवन की लहरों से ओझल हो पाऊंगा,
-मैं संग उसके उड़, कण-कण में मिल जाऊंगा।
-मैं वह चिंगारी नहीं, जो चिता पर बुझ जाऊंगा,
-मैं वह शेषांश हूँ,जो धरा के संग मिल जाऊँगा,
-मैं वो राख हूँ, मैं आग नहीं।
-मैं पूजा की स्माई नहीं,
-मैं महादेव की भस्म सही,
-मैं राख हूँ, मैं आग नहीं।
-न सूरज सा तेज मुझमें,
-चाँद सी चाँदनी है।
-माना, उतनी चमक नहीं,
-पर उतनी निर्मल मेरी वाणी है।
-उतनी शीतल मेरी काया है।
-मैं राख हूँ, मैं आग नहीं।
-न जलन की आग मुझमें,
-न अहंकार की ज्वाला हु,
-मैं अपने स्वप्नों दूर कर बैठा हु,
-झूठे शीश महल थोड़ कर बैठा हु,
-मैं भीतर घर कर बैठा हु।
-मैं अब धूल में भी अमृत हूँ ।
-इस संघर्ष की आग से
-मैं क्या तपु
-मैं क्या जलू
-में आग नहीं,
-मैं राख हूँ
-मगर इस अग्नि की पहचान हूँ।
-मैं शून्य में समा, अनंत का प्रमाण हूँ।
-अग्नि का समर्पण हु
-और इस धरा का सम्मान हूँ।.`,
-  contrib: [],
-  tags: ['Poetry'],
-  mediaType: 'script'
+title:'मैं राख हूँ',
+role:'POEM',
+desc:`
+
+<span class="fp-line pull">मैं राख हूँ,</span>
+<span class="fp-line">मैं आग नहीं,</span>
+<span class="fp-line">जोश है, मगर खाक नहीं।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मैं,</span>
+<span class="fp-line">न जल प्रभाव से मिट पाऊंगा,</span>
+<span class="fp-line pull">मैं उसमें ही मिल जाऊंगा।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">न शीत पवन की लहरों से ओझल हो पाऊंगा,</span>
+<span class="fp-line pull">मैं संग उसके उड़, कण-कण में मिल जाऊंगा।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मैं वह चिंगारी नहीं, जो चिता पर बुझ जाऊंगा,</span>
+<span class="fp-line pull">मैं वह शेषांश हूँ, जो धरा के संग मिल जाऊँगा।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line pull">मैं वो राख हूँ, मैं आग नहीं।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मैं पूजा की स्माई नहीं,</span>
+<span class="fp-line">मैं महादेव की भस्म सही,</span>
+<span class="fp-line pull">मैं राख हूँ, मैं आग नहीं।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">न सूरज सा तेज मुझमें,</span>
+<span class="fp-line pull">चाँद सी चाँदनी है।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">माना, उतनी चमक नहीं,</span>
+<span class="fp-line pull">पर उतनी निर्मल मेरी वाणी है।</span>
+
+<span class="fp-line">उतनी शीतल मेरी काया है।</span>
+<span class="fp-line pull">मैं राख हूँ, मैं आग नहीं।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">न जलन की आग मुझमें,</span>
+<span class="fp-line">न अहंकार की ज्वाला हु,</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मैं अपने स्वप्नों दूर कर बैठा हु,</span>
+<span class="fp-line">झूठे शीश महल थोड़ कर बैठा हु,</span>
+<span class="fp-line pull">मैं भीतर घर कर बैठा हु।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मैं अब धूल में भी अमृत हूँ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">इस संघर्ष की आग से</span>
+<span class="fp-line">मैं क्या तपु</span>
+<span class="fp-line">मैं क्या जलू</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">में आग नहीं,</span>
+<span class="fp-line pull">मैं राख हूँ</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">मगर इस अग्नि की पहचान हूँ।</span>
+<span class="fp-line pull">मैं शून्य में समा, अनंत का प्रमाण हूँ।</span>
+
+<span class="fp-gap"></span>
+
+<span class="fp-line">अग्नि का समर्पण हु</span>
+<span class="fp-line pull">और इस धरा का सम्मान हूँ।</span>
+
+<span class="fp-sig">~ Rudransh</span>
+
+`,
+tags:['Poetry'],
+mediaType:'script'
 },
 
 'Reel': {
-  title: 'Aakhri Panna',
+  title: 'Panna',
   role: 'Short story',
   pdf: 'assets/scripts/short_reel_series.pdf',
   tags: ['Short Story reel'],
@@ -2017,11 +2558,14 @@ window.addEventListener('load',()=> {
   tags: ['Dialogue', 'Script'],
   mediaType: 'pdf'
 },
-
-
-
-           
-        };
+'featured-script': {
+  title: 'The Witness',
+  role: 'Writer · Actor',
+  pdf: 'assets/scripts/The_witness_script.pdf',
+  tags: ['Short Film', 'Anti-Ragging', 'UGC', 'Best Film Award'],
+  mediaType: 'pdf'
+},
+};
 
         // Navigation scroll effect
         window.addEventListener('scroll', () => {
@@ -2163,22 +2707,36 @@ function showPage(pageId, push = true) {
   }
 }
 
+function penFilter(type, btn) {
+  document.querySelectorAll('.pen-filter').forEach(b => b.classList.remove('pen-active'));
+  btn.classList.add('pen-active');
 
-        function filterWorks(type) {
-  document.querySelectorAll('.pen-filter')
-    .forEach(b => b.classList.remove('pen-active'));
-  event.currentTarget.classList.add('pen-active');
+  const featured = document.getElementById('pen-featured');
+  const featuredScript = document.getElementById('pen-featured-script');
+
+  if (type === 'poem') {
+    featured.classList.remove('hidden-featured');
+    featuredScript.style.display = 'none';
+  } else if (type === 'monologue') {
+    featured.classList.add('hidden-featured');
+    featuredScript.style.display = 'block';
+  } else {
+    // all
+    featured.classList.remove('hidden-featured');
+    featuredScript.style.display = 'block';
+  }
 
   document.querySelectorAll('.pen-item').forEach(item => {
-    const isMatch =
-      type === 'all' ||
-      item.querySelector('.pen-type')
-          .innerText.toLowerCase()
-          .includes(type);
-    item.style.display = isMatch ? 'block' : 'none';
+    const t = item.getAttribute('data-type') || '';
+    if (type === 'all') {
+      item.style.display = 'block';
+    } else if (type === 'poem') {
+      item.style.display = t === 'poem' ? 'block' : 'none';
+    } else if (type === 'monologue') {
+      item.style.display = t === 'monologue' ? 'block' : 'none';
+    }
   });
 }
-
         function resetOverlayState() {
   const overlay = document.getElementById('project-overlay');
 
@@ -2248,12 +2806,21 @@ if (fallbackDownload) fallbackDownload.href = "";
     ).join('');
 
   // TEXT POETRY
-  if (data.mediaType === 'script') {
+if (data.mediaType === 'script') {
 
-    poetryBox.classList.remove('hidden');
-    poetryBox.innerHTML = data.desc.replace(/\n/g, '<br>');
+  poetryBox.classList.remove('hidden');
 
+  /* remove prose style first */
+  poetryBox.classList.remove("prose-mode");
+
+  /* if it's a write-up */
+  if(data.tags && data.tags.includes("Write up")){
+      poetryBox.classList.add("prose-mode");
   }
+
+  poetryBox.innerHTML = data.desc;
+
+}
 
   // PDF SCRIPT
 if (data.mediaType === 'pdf') {
