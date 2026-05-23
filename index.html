@@ -951,6 +951,42 @@ window.addEventListener('load',()=> {
         </ul>
 
         <!-- OUTER BULLET -->
+<li class="text-white mt-3">
+    Film 301 — Horror / Psychological Thriller
+</li>
+
+<!-- INNER BULLETS -->
+<ul class="inner-points mt-2 space-y-4">
+
+    <li class="font-serif italic text-white/80">
+        Written and directed a psychological horror short film exploring fear, perception, and isolation.
+    </li>
+
+    <li class="font-serif italic text-white/80">
+        Led the narrative development, visual direction, and execution of the project.
+    </li>
+
+</ul>
+
+<!-- OUTER BULLET -->
+<li class="text-white mt-3">
+    Pothole — 48 Hour Film Competition
+</li>
+
+<!-- INNER BULLETS -->
+<ul class="inner-points mt-2 space-y-4">
+
+    <li class="font-serif italic text-white/80">
+        Written and directed under a strict 48-hour filmmaking challenge.
+    </li>
+
+    <li class="font-serif italic text-white/80">
+        Focused on rapid storytelling, creative problem-solving, and time-bound execution.
+    </li>
+
+</ul>
+
+        <!-- OUTER BULLET -->
         <li class="text-white mt-3">
             Indore Municipal Corporation Documentary(IMC)
         </li>
@@ -1337,7 +1373,61 @@ window.addEventListener('load',()=> {
 
                 <!-- FILM CARD -->
                
+<!-- FILM CARD -->
+<div class="poster-card relative group" onclick="openProject('film301')">
 
+    <div class="w-full h-full bg-neutral-800 flex items-center justify-center font-title text-white/10 text-[10px] text-center p-4">
+        Film Poster Placeholder
+    </div>
+
+    <div class="view-overlay absolute inset-0 flex items-center justify-center">
+        <span class="view-btn border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
+            View Details
+        </span>
+    </div>
+
+    <div class="poster-info">
+        <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
+            Horror · Psychological Thriller
+        </span>
+
+        <h3 class="text-xl md:text-2xl font-title mb-1">
+            Film 301
+        </h3>
+
+        <p class="text-[9px] font-serif italic opacity-60">
+            Written & Directed by Rudransh Sharma
+        </p>
+    </div>
+</div>
+
+<!-- FILM CARD -->
+<div class="poster-card relative group" onclick="openProject('pothole')">
+
+    <div class="w-full h-full bg-neutral-800 flex items-center justify-center font-title text-white/10 text-[10px] text-center p-4">
+        Film Poster Placeholder
+    </div>
+
+    <div class="view-overlay absolute inset-0 flex items-center justify-center">
+        <span class="view-btn border border-white/40 px-4 py-2 text-[10px] tracking-widest uppercase text-white">
+            View Details
+        </span>
+    </div>
+
+    <div class="poster-info">
+        <span class="work-tag border-white/30 text-white/50 mb-3 inline-block">
+            48 Hour Film Competition
+        </span>
+
+        <h3 class="text-xl md:text-2xl font-title mb-1">
+            Pothole
+        </h3>
+
+        <p class="text-[9px] font-serif italic opacity-60">
+            Written & Directed by Rudransh Sharma
+        </p>
+    </div>
+</div>
 
                     
            
@@ -2255,6 +2345,34 @@ window.addEventListener('load',()=> {
 
     <script>
         const projectData = {
+
+        'film301': {
+    title: 'Film 301',
+    role: 'WRITER / DIRECTOR',
+    desc: 'Film 301 is a horror and psychological thriller exploring fear, isolation, and the fragile boundaries between reality and perception.',
+    contrib: [
+        'Story & Screenplay',
+        'Direction',
+        'Concept Development'
+    ],
+    video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID',
+    tags: ['Horror', 'Psychological Thriller', 'Short Film'],
+    mediaType: 'video'
+},
+
+'pothole': {
+    title: 'Pothole',
+    role: 'WRITER / DIRECTOR',
+    desc: 'Pothole is a short film created during a 48-hour filmmaking competition, focusing on rapid storytelling and experimental execution under time pressure.',
+    contrib: [
+        'Story Writing',
+        'Direction',
+        '48 Hour Film Production'
+    ],
+    video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID',
+    tags: ['48 Hour Film', 'Short Film', 'Experimental'],
+    mediaType: 'video'
+},
             'echo': { 
     title: 'Shuruwat', 
     role: 'ACTOR, Co - Writer', 
