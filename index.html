@@ -352,7 +352,10 @@
     font-size: 0.95rem;
     line-height: 1.7;
     color: rgba(255,255,255,0.75);
+  
 }
+
+
 
 /* ===== THE PEN (WHITE MODE) ===== */
 
@@ -1727,31 +1730,131 @@ window.addEventListener('load',()=> {
       </p>
     </div>
 
-     PERFORMANCE ARCHIVE -->
-    <div class="space-y-12 mb-32 mt-24">
+<style>
+/* ===== ON MIC: PERFORMANCE ARCHIVE GALLERY ===== */
+.mic-video {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #111;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+}
 
-      <div class="flex items-center gap-4 max-w-4xl mx-auto">
-        <h3 class="text-[10px] uppercase tracking-[0.3em] text-amber-500">
-          Performance Archive
+.mic-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.mic-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.mic-tag {
+    display: inline-block;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #ffbf00;
+    margin-bottom: 4px;
+}
+
+.mic-info h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+}
+</style>
+
+<!-- PERFORMANCE ARCHIVE -->
+<div class="space-y-12 mb-32 mt-24">
+
+    <div class="flex items-center gap-4 max-w-5xl mx-auto">
+        <h3 class="text-[10px] uppercase tracking-[0.35em] text-amber-500">
+            Performance Archive
         </h3>
         <div class="flex-grow h-px bg-white/10"></div>
         <span class="text-[10px] text-white/40">05</span>
-      </div>
-
-      <!-- TOP ROW -->
-      <div class="grid grid-cols-3 gap-2 max-w-4xl mx-auto">
-        <video src="" class="aspect-[9/16] object-cover border border-white/10" muted loop playsinline></video>
-        <video src="" class="aspect-[9/16] object-cover border border-white/10" muted loop playsinline></video>
-        <video src="" class="aspect-[9/16] object-cover border border-white/10" muted loop playsinline></video>
-      </div>
-
-      <!-- BOTTOM ROW -->
-      <div class="grid grid-cols-2 gap-2 max-w-2xl mx-auto">
-        <video src="" class="aspect-[9/16] object-cover border border-white/10" muted loop playsinline></video>
-        <video src="" class="aspect-[9/16] object-cover border border-white/10" muted loop playsinline></video>
-      </div>
     </div>
 
+    <!-- Top -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+
+        <div class="mic-video">
+            <iframe src="https://www.youtube.com/embed/Qxt5EX6uoY4?si=o7sDHBKdcm5HmOsu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <div class="mic-info">
+                <span class="mic-tag">Poetry</span>
+                <h4>Performance One</h4>
+            </div>
+        </div>
+
+        <div class="mic-video">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2"
+                loading="lazy"
+                allowfullscreen></iframe>
+
+            <div class="mic-info">
+                <span class="mic-tag">Open Mic</span>
+                <h4>Performance Two</h4>
+            </div>
+        </div>
+
+        <div class="mic-video">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3"
+                loading="lazy"
+                allowfullscreen></iframe>
+
+            <div class="mic-info">
+                <span class="mic-tag">Poetry</span>
+                <h4>Performance Three</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+
+        <div class="mic-video">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_4"
+                loading="lazy"
+                allowfullscreen></iframe>
+
+            <div class="mic-info">
+                <span class="mic-tag"></span>
+                <h4>Performance Four</h4>
+            </div>
+        </div>
+
+        <div class="mic-video">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_5"
+                loading="lazy"
+                allowfullscreen></iframe>
+
+            <div class="mic-info">
+                <span class="mic-tag">Monologue</span>
+                <h4>Performance Five</h4>
+            </div>
+        </div>
+
+    </div>
+
+</div>
     <!-- END NOTE -->
     <div class="max-w-xl mx-auto text-center">
       <p class="text-sm md:text-base font-serif italic text-white/50 leading-relaxed">
